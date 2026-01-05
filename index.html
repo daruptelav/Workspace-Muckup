@@ -170,7 +170,7 @@
                             </div>
                         </div>
                     </div>
-                    <!-- Cuentas -->
+                 <!-- Cuentas -->
                     <div class="nav-section mb-4">
 
                         <!-- TÍTULO / TOGGLE -->
@@ -189,14 +189,11 @@
                         <!-- SUBMENÚ COLAPSABLE -->
                         <div id="cuentasMenu" class="collapse show">
                             <div class="list-group list-group-flush">
-                                <a href="#inicio" class="list-group-item list-group-item-action border-0 rounded mb-1">
+                                <a href="#cuentas" class="list-group-item list-group-item-action border-0 rounded mb-1">
                                     <i class="bi bi-card-list me-2 text-primary"></i>Cuentas
                                 </a>
-                                <a href="#crear" class="list-group-item list-group-item-action border-0 rounded mb-1">
-                                    <i class="bi bi-person-plus me-2 text-danger"></i>Crear cuenta
-                                </a>
-                                <a href="#admin" class="list-group-item list-group-item-action border-0 rounded mb-1">
-                                    <i class="bi bi-gear me-2 text-warning"></i>Administrar cuenta
+                                <a href="#crear-cuenta" class="list-group-item list-group-item-action border-0 rounded mb-1">
+                                    <i class="bi bi-person-plus me-2 text-success"></i>Crear cuenta
                                 </a>
                             </div>
                         </div>
@@ -279,7 +276,6 @@
                         </div>
                     </div>
 
-
                     <!-- Publicaciones -->
                     <div class="nav-section mb-4">
                         <h6 class="text-uppercase text-muted fw-bold mb-3 ps-2 d-flex align-items-center justify-content-between collapse-toggle"
@@ -295,23 +291,25 @@
                         </h6>
                         <div id="publicacionesMenu" class="collapse show">
                             <div class="list-group list-group-flush">
-                            <a href="#colores" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="colores">
-                                <i class="bi bi-card-list me-2 text-danger"></i>Publicaciones
+                            <a href="#control-usados" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="control-usados">
+                                <i class="bi bi-car-front me-2 text-warning"></i>Control Usados
                             </a>
-                            <a href="#ficha-tecnica" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="ficha-tecnica">
+                            <a href="#control-nuevos" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="control-nuevos">
+                                <i class="bi bi-car-front-fill me-2 text-success"></i>Control Nuevos
+                            </a>
+                            <a href="#crear-publicacion" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="crear-publicacion">
                                 <i class="bi bi-pencil-square me-2 text-primary"></i>Crear Publicación
                             </a>
-                            <a href="#tipografia" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="tipografia">
+                            <a href="#administrar-publicacion" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="administrar-publicacion">
                                 <i class="bi bi-gear me-2 text-dark"></i>Administrar Publicación
                             </a>
-                            <a href="#tipografia" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="tipografia">
+                            <a href="#estadisticos-publicacion" class="list-group-item list-group-item-action border-0 rounded mb-1" data-section="estadisticos-publicacion">
                                 <i class="bi bi-bar-chart me-2 text-info"></i>Estadisticos
                             </a>
                         </div>
                         </div>
                         
                     </div>
-
                     <!-- Fichas Tecnicas -->
                     <div class="nav-section mb-4">
                         <h6 class="text-uppercase text-muted fw-bold mb-3 ps-2 d-flex align-items-center justify-content-between collapse-toggle"
@@ -440,9 +438,6 @@
 
     <!-- Main Content -->
     <main class="wiki-main">
-
-        
-
         <!-- Hero Section -->
         <section class="hero-section" id="inicio">
             <h1>Autocosmos Workspace</h1>
@@ -507,6 +502,239 @@
             .hover-effect:hover {
                 box-shadow: 0 5px 15px rgba(0,0,0,0.08);
                 transform: translateY(-2px);
+            }
+            
+            /* === Estilos para la sección de Cuentas === */
+            .accounts-section {
+                padding: 40px 0;
+            }
+
+            .section-header {
+                margin-bottom: 30px;
+            }
+
+            .filter-section {
+                background: #f8f9fa;
+                padding: 20px;
+                border-radius: 8px;
+                margin-bottom: 20px;
+            }
+
+            .accounts-table {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .accounts-table table {
+                margin-bottom: 0;
+            }
+
+            .accounts-table thead {
+                background: #0066CC;
+                color: white;
+            }
+
+            .accounts-table thead th {
+                border: none;
+                padding: 15px;
+                font-weight: 600;
+                cursor: pointer;
+                user-select: none;
+            }
+
+            .accounts-table thead th:hover {
+                background: #004499;
+            }
+
+            .accounts-table tbody tr {
+                border-bottom: 1px solid #dee2e6;
+                transition: background 0.2s;
+            }
+
+            .accounts-table tbody tr:hover {
+                background: #f8f9fa;
+            }
+
+            .accounts-table tbody td {
+                padding: 15px;
+                vertical-align: middle;
+            }
+
+            .status-badge {
+                padding: 5px 12px;
+                border-radius: 15px;
+                font-size: 0.85rem;
+                font-weight: 500;
+            }
+
+            .status-active {
+                background: #d4edda;
+                color: #155724;
+            }
+
+            .status-inactive {
+                background: #f8d7da;
+                color: #721c24;
+            }
+
+            .status-pending {
+                background: #fff3cd;
+                color: #856404;
+            }
+
+            .export-buttons .btn {
+                margin-right: 5px;
+                margin-bottom: 5px;
+            }
+
+            .pagination-controls {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 20px;
+                background: white;
+                border-top: 1px solid #dee2e6;
+            }
+
+            /* === Estilos para la sección de Publicaciones === */
+            .publications-section {
+                padding: 40px 0;
+            }
+
+            .publications-list {
+                background: white;
+                border-radius: 8px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .publication-card {
+                padding: 20px;
+                border-bottom: 1px solid #dee2e6;
+                transition: background 0.2s;
+            }
+
+            .publication-card:hover {
+                background: #f8f9fa;
+            }
+
+            .publication-card:last-child {
+                border-bottom: none;
+            }
+
+            .publication-image {
+                width: 100%;
+                height: 150px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background: #f8f9fa;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+
+            .publication-image img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            .publication-info h6 {
+                color: #0066CC;
+                font-size: 0.9rem;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+
+            .moderation-tags {
+                display: flex;
+                flex-direction: column;
+            }
+
+            .moderation-tag {
+                font-size: 0.75rem;
+                line-height: 1.4;
+            }
+
+            /* === Estilos para tabla de publicaciones nuevos === */
+            .publications-table-wrapper {
+                background: white;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .publications-table-wrapper table {
+                margin-bottom: 0;
+            }
+
+            .publications-table-wrapper thead {
+                background: #0066CC;
+                color: white;
+            }
+
+            .publications-table-wrapper thead th {
+                border: none;
+                padding: 15px;
+                font-weight: 600;
+                vertical-align: middle;
+            }
+
+            .publications-table-wrapper tbody tr {
+                transition: background 0.2s;
+            }
+
+            .publications-table-wrapper tbody tr:hover {
+                background: #f8f9fa;
+            }
+
+            .publications-table-wrapper tbody td {
+                padding: 15px;
+                vertical-align: middle;
+            }
+
+            .product-images {
+                display: flex;
+                gap: 5px;
+            }
+
+            .product-image-small {
+                width: 60px;
+                height: 45px;
+                background: #f8f9fa;
+                border-radius: 4px;
+                overflow: hidden;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .product-image-small img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+
+            /* === Estilos para el formulario de creación === */
+            .create-account-section {
+                padding: 40px 0;
+            }
+
+            .form-card {
+                background: white;
+                border-radius: 8px;
+                padding: 30px;
+                box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            }
+
+            .form-section-title {
+                font-size: 1.1rem;
+                font-weight: 600;
+                color: #0066CC;
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+                border-bottom: 2px solid #e9ecef;
             }
 
             /* Estilos para el acordeón de Ficha Técnica */
@@ -631,202 +859,1456 @@
             </div>
         </section>
 
+                <!-- ======================================== -->
+        <!-- SECCIÓN DE CUENTAS -->
+        <!-- ======================================== -->
+        <section class="accounts-section" id="cuentas">
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="section-header">
+                    <h2 class="mb-2">
+                        <i class="bi bi-people-fill text-primary me-2"></i>
+                        Gestión de Cuentas
+                    </h2>
+                    <p class="text-muted">Administra todas las cuentas de usuarios del sistema</p>
+                </div>
+
+                <!-- Filtros y búsqueda -->
+                <div class="filter-section">
+                    <div class="row g-3">
+                        <div class="col-md-4">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-search me-1"></i>Buscar
+                            </label>
+                            <input type="text" 
+                                   class="form-control" 
+                                   id="searchAccount" 
+                                   placeholder="Buscar por nombre, email o rol...">
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-funnel me-1"></i>Estado
+                            </label>
+                            <select class="form-select" id="filterStatus">
+                                <option value="">Todos los estados</option>
+                                <option value="active">Activo</option>
+                                <option value="inactive">Inactivo</option>
+                                <option value="pending">Pendiente</option>
+                            </select>
+                        </div>
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-person-badge me-1"></i>Rol
+                            </label>
+                            <select class="form-select" id="filterRole">
+                                <option value="">Todos los roles</option>
+                                <option value="admin">Administrador</option>
+                                <option value="editor">Editor</option>
+                                <option value="vendedor">Vendedor</option>
+                                <option value="viewer">Visualizador</option>
+                            </select>
+                        </div>
+                        <div class="col-md-2 d-flex align-items-end">
+                            <button class="btn btn-outline-secondary w-100" id="clearFilters">
+                                <i class="bi bi-x-circle me-1"></i>Limpiar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de exportación -->
+                <div class="export-buttons mb-3">
+                    <button class="btn btn-success" onclick="exportToExcel()">
+                        <i class="bi bi-file-earmark-excel me-1"></i>Excel
+                    </button>
+                    <button class="btn btn-danger" onclick="exportToPDF()">
+                        <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+                    </button>
+                    <button class="btn btn-info" onclick="exportToCSV()">
+                        <i class="bi bi-file-earmark-text me-1"></i>CSV
+                    </button>
+                    <button class="btn btn-primary float-end" onclick="window.location.href='#crear-cuenta'">
+                        <i class="bi bi-person-plus me-1"></i>Nueva Cuenta
+                    </button>
+                </div>
+
+                <!-- Tabla de cuentas -->
+                <div class="accounts-table">
+                    <table class="table table-hover mb-0" id="accountsTable">
+                        <thead>
+                            <tr>
+                                <th onclick="sortTable(0)">
+                                    <i class="bi bi-hash me-1"></i>ID 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th onclick="sortTable(1)">
+                                    <i class="bi bi-person me-1"></i>Nombre 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th onclick="sortTable(2)">
+                                    <i class="bi bi-envelope me-1"></i>Email 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th onclick="sortTable(3)">
+                                    <i class="bi bi-person-badge me-1"></i>Rol 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th onclick="sortTable(4)">
+                                    <i class="bi bi-calendar me-1"></i>Fecha Registro 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th onclick="sortTable(5)">
+                                    <i class="bi bi-toggles me-1"></i>Estado 
+                                    <i class="bi bi-arrow-down-up ms-1"></i>
+                                </th>
+                                <th>
+                                    <i class="bi bi-gear me-1"></i>Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Fila 1 -->
+                            <tr>
+                                <td>001</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://icon-library.com/images/avatar-icon-images/avatar-icon-images-4.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Monserrat Rosas</strong>
+                                    </div>
+                                </td>
+                                <td>monserrat.rosas@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Administrador</span></td>
+                                <td>15/01/2024</td>
+                                <td><span class="status-badge status-active">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 2 -->
+                            <tr>
+                                <td>002</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/men/32.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Carlos Martínez</strong>
+                                    </div>
+                                </td>
+                                <td>carlos.martinez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Editor</span></td>
+                                <td>20/02/2024</td>
+                                <td><span class="status-badge status-active">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 3 -->
+                            <tr>
+                                <td>003</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/women/44.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Ana García</strong>
+                                    </div>
+                                </td>
+                                <td>ana.garcia@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Vendedor</span></td>
+                                <td>05/03/2024</td>
+                                <td><span class="status-badge status-pending">Pendiente</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 4 -->
+                            <tr>
+                                <td>004</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/men/46.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Luis Hernández</strong>
+                                    </div>
+                                </td>
+                                <td>luis.hernandez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Visualizador</span></td>
+                                <td>12/03/2024</td>
+                                <td><span class="status-badge status-active">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 5 -->
+                            <tr>
+                                <td>005</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/women/68.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>María López</strong>
+                                    </div>
+                                </td>
+                                <td>maria.lopez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Editor</span></td>
+                                <td>18/03/2024</td>
+                                <td><span class="status-badge status-inactive">Inactivo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 6 -->
+                            <tr>
+                                <td>006</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/men/75.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Pedro Sánchez</strong>
+                                    </div>
+                                </td>
+                                <td>pedro.sanchez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Vendedor</span></td>
+                                <td>22/03/2024</td>
+                                <td><span class="status-badge status-active">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 7 -->
+                            <tr>
+                                <td>007</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/women/90.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Laura Rodríguez</strong>
+                                    </div>
+                                </td>
+                                <td>laura.rodriguez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Administrador</span></td>
+                                <td>28/03/2024</td>
+                                <td><span class="status-badge status-active">Activo</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                            <!-- Fila 8 -->
+                            <tr>
+                                <td>008</td>
+                                <td>
+                                    <div class="d-flex align-items-center">
+                                        <img src="https://randomuser.me/api/portraits/men/85.jpg" 
+                                             class="rounded-circle me-2" 
+                                             width="32" 
+                                             height="32" 
+                                             alt="Avatar">
+                                        <strong>Jorge Ramírez</strong>
+                                    </div>
+                                </td>
+                                <td>jorge.ramirez@autocosmos.com</td>
+                                <td><span class="badge bg-secondary">Visualizador</span></td>
+                                <td>02/04/2024</td>
+                                <td><span class="status-badge status-pending">Pendiente</span></td>
+                                <td>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info" title="Ver">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <!-- Paginación -->
+                    <div class="pagination-controls">
+                        <div>
+                            <span class="text-muted">Mostrando 1-8 de 8 registros</span>
+                        </div>
+                        <nav>
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1">Anterior</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================== -->
+        <!-- SECCIÓN DE CREAR CUENTA -->
+        <!-- ======================================== -->
+        <section class="create-account-section" id="crear-cuenta">
+            <div class="container">
+                <!-- Encabezado -->
+                <div class="section-header">
+                    <h2 class="mb-2">
+                        <i class="bi bi-person-plus-fill text-success me-2"></i>
+                        Crear Nueva Cuenta
+                    </h2>
+                    <p class="text-muted">Complete el formulario para dar de alta una nueva cuenta de usuario</p>
+                </div>
+
+                <!-- Formulario -->
+                <div class="form-card">
+                    <form id="createAccountForm">
+                        <!-- Información Personal -->
+                        <div class="form-section-title">
+                            <i class="bi bi-person-circle me-2"></i>Información Personal
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="firstName" class="form-label fw-semibold">
+                                    Nombre(s) <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="firstName" 
+                                       placeholder="Ingrese el nombre" 
+                                       required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="lastName" class="form-label fw-semibold">
+                                    Apellido(s) <span class="text-danger">*</span>
+                                </label>
+                                <input type="text" 
+                                       class="form-control" 
+                                       id="lastName" 
+                                       placeholder="Ingrese los apellidos" 
+                                       required>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="email" class="form-label fw-semibold">
+                                    Correo Electrónico <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-envelope"></i>
+                                    </span>
+                                    <input type="email" 
+                                           class="form-control" 
+                                           id="email" 
+                                           placeholder="usuario@autocosmos.com" 
+                                           required>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="phone" class="form-label fw-semibold">
+                                    Teléfono
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-telephone"></i>
+                                    </span>
+                                    <input type="tel" 
+                                           class="form-control" 
+                                           id="phone" 
+                                           placeholder="+52 55 1234 5678">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información de Cuenta -->
+                        <div class="form-section-title">
+                            <i class="bi bi-shield-lock me-2"></i>Información de Cuenta
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="username" class="form-label fw-semibold">
+                                    Nombre de Usuario <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-at"></i>
+                                    </span>
+                                    <input type="text" 
+                                           class="form-control" 
+                                           id="username" 
+                                           placeholder="nombre.usuario" 
+                                           required>
+                                </div>
+                                <small class="text-muted">Solo letras minúsculas, números y puntos</small>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="role" class="form-label fw-semibold">
+                                    Rol del Usuario <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="role" required>
+                                    <option value="">Seleccione un rol</option>
+                                    <option value="admin">Administrador</option>
+                                    <option value="editor">Editor</option>
+                                    <option value="vendedor">Vendedor</option>
+                                    <option value="viewer">Visualizador</option>
+                                    <option value="sac">Servicio al Cliente</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="password" class="form-label fw-semibold">
+                                    Contraseña <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-key"></i>
+                                    </span>
+                                    <input type="password" 
+                                           class="form-control" 
+                                           id="password" 
+                                           placeholder="Ingrese la contraseña" 
+                                           required>
+                                    <button class="btn btn-outline-secondary" 
+                                            type="button" 
+                                            onclick="togglePassword('password')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                                <small class="text-muted">Mínimo 8 caracteres, incluir mayúsculas, minúsculas y números</small>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="confirmPassword" class="form-label fw-semibold">
+                                    Confirmar Contraseña <span class="text-danger">*</span>
+                                </label>
+                                <div class="input-group">
+                                    <span class="input-group-text">
+                                        <i class="bi bi-key-fill"></i>
+                                    </span>
+                                    <input type="password" 
+                                           class="form-control" 
+                                           id="confirmPassword" 
+                                           placeholder="Confirme la contraseña" 
+                                           required>
+                                    <button class="btn btn-outline-secondary" 
+                                            type="button" 
+                                            onclick="togglePassword('confirmPassword')">
+                                        <i class="bi bi-eye"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Permisos y Configuración -->
+                        <div class="form-section-title">
+                            <i class="bi bi-sliders me-2"></i>Permisos y Configuración
+                        </div>
+                        <div class="row g-3 mb-4">
+                            <div class="col-md-6">
+                                <label for="department" class="form-label fw-semibold">
+                                    Departamento
+                                </label>
+                                <select class="form-select" id="department">
+                                    <option value="">Seleccione un departamento</option>
+                                    <option value="ventas">Ventas</option>
+                                    <option value="marketing">Marketing</option>
+                                    <option value="soporte">Soporte Técnico</option>
+                                    <option value="administracion">Administración</option>
+                                    <option value="publicidad">Publicidad</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="status" class="form-label fw-semibold">
+                                    Estado de la Cuenta <span class="text-danger">*</span>
+                                </label>
+                                <select class="form-select" id="status" required>
+                                    <option value="active">Activo</option>
+                                    <option value="inactive">Inactivo</option>
+                                    <option value="pending">Pendiente</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Permisos específicos -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <label class="form-label fw-semibold mb-3">
+                                    <i class="bi bi-check2-square me-1"></i>Permisos de Módulos
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permDashboard" 
+                                                   checked>
+                                            <label class="form-check-label" for="permDashboard">
+                                                <i class="bi bi-speedometer2 me-1 text-primary"></i>
+                                                Acceso a Dashboards
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permAccounts">
+                                            <label class="form-check-label" for="permAccounts">
+                                                <i class="bi bi-people me-1 text-info"></i>
+                                                Gestión de Cuentas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permPublications" 
+                                                   checked>
+                                            <label class="form-check-label" for="permPublications">
+                                                <i class="bi bi-car-front me-1 text-warning"></i>
+                                                Gestión de Publicaciones
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permFichas">
+                                            <label class="form-check-label" for="permFichas">
+                                                <i class="bi bi-clipboard me-1 text-success"></i>
+                                                Gestión de Fichas Técnicas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permPublicidad">
+                                            <label class="form-check-label" for="permPublicidad">
+                                                <i class="bi bi-megaphone me-1 text-danger"></i>
+                                                Gestión de Publicidad
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permLeads">
+                                            <label class="form-check-label" for="permLeads">
+                                                <i class="bi bi-person-badge me-1 text-secondary"></i>
+                                                Gestión de Leads
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permReports">
+                                            <label class="form-check-label" for="permReports">
+                                                <i class="bi bi-file-bar-graph me-1 text-primary"></i>
+                                                Reportes y Estadísticas
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 mb-2">
+                                        <div class="form-check">
+                                            <input class="form-check-input" 
+                                                   type="checkbox" 
+                                                   id="permSettings">
+                                            <label class="form-check-label" for="permSettings">
+                                                <i class="bi bi-gear me-1 text-dark"></i>
+                                                Configuración del Sistema
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notas adicionales -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <label for="notes" class="form-label fw-semibold">
+                                    <i class="bi bi-chat-left-text me-1"></i>Notas Adicionales
+                                </label>
+                                <textarea class="form-control" 
+                                          id="notes" 
+                                          rows="3" 
+                                          placeholder="Agregue cualquier nota o comentario sobre esta cuenta..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Notificaciones -->
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <label class="form-label fw-semibold mb-3">
+                                    <i class="bi bi-bell me-1"></i>Configuración de Notificaciones
+                                </label>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" 
+                                           type="checkbox" 
+                                           id="notifyEmail" 
+                                           checked>
+                                    <label class="form-check-label" for="notifyEmail">
+                                        Enviar notificaciones por correo electrónico
+                                    </label>
+                                </div>
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" 
+                                           type="checkbox" 
+                                           id="notifyWelcome" 
+                                           checked>
+                                    <label class="form-check-label" for="notifyWelcome">
+                                        Enviar correo de bienvenida al usuario
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" 
+                                           type="checkbox" 
+                                           id="notifyPasswordReset">
+                                    <label class="form-check-label" for="notifyPasswordReset">
+                                        Requerir cambio de contraseña en el primer inicio de sesión
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="row">
+                            <div class="col-12">
+                                <hr class="my-4">
+                                <div class="d-flex justify-content-between">
+                                    <button type="button" 
+                                            class="btn btn-outline-secondary" 
+                                            onclick="window.location.href='#cuentas'">
+                                        <i class="bi bi-arrow-left me-1"></i>
+                                        Cancelar
+                                    </button>
+                                    <div>
+                                        <button type="reset" 
+                                                class="btn btn-outline-danger me-2">
+                                            <i class="bi bi-x-circle me-1"></i>
+                                            Limpiar Formulario
+                                        </button>
+                                        <button type="submit" 
+                                                class="btn btn-success">
+                                            <i class="bi bi-check-circle me-1"></i>
+                                            Crear Cuenta
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================== -->
+        <!-- SECCIÓN DE CONTROL USADOS -->
+        <!-- ======================================== -->
+        <section class="publications-section" id="control-usados">
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="section-header">
+                    <h2 class="mb-2">
+                        <i class="bi bi-car-front-fill text-primary me-2"></i>
+                        Control de Publicaciones - Usados
+                    </h2>
+                    <p class="text-muted">Administra todas las publicaciones de vehículos usados del sistema</p>
+                </div>
+
+                <!-- Filtros y búsqueda -->
+                <div class="filter-section">
+                    <div class="row g-3">
+                        <!-- Estado publicación -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-toggles me-1"></i>Estado publicación
+                            </label>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estado" id="estadoTodas" checked>
+                                    <label class="form-check-label" for="estadoTodas">Todas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estado" id="estadoPendiente">
+                                    <label class="form-check-label" for="estadoPendiente">Pendiente</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estado" id="estadoActiva">
+                                    <label class="form-check-label" for="estadoActiva">Activa</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estado" id="estadoRechazada">
+                                    <label class="form-check-label" for="estadoRechazada">Rechazada</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Última modificación -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-calendar me-1"></i>Última modificación
+                            </label>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="filtroFecha">
+                                    <label class="form-check-label" for="filtroFecha">Desde</label>
+                                </div>
+                                <input type="date" class="form-control" id="fechaDesde" style="max-width: 200px;">
+                            </div>
+                        </div>
+
+                        <!-- Cuenta -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-person me-1"></i>Cuenta
+                            </label>
+                            <input type="text" class="form-control" placeholder="Buscar por cuenta...">
+                        </div>
+
+                        <!-- Tipo venta -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-cash-stack me-1"></i>Tipo venta
+                            </label>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="venta" id="ventaTodas" checked>
+                                    <label class="form-check-label" for="ventaTodas">Todas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="venta" id="ventaPrecioFinal">
+                                    <label class="form-check-label" for="ventaPrecioFinal">Precio final</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="venta" id="ventaFinanciado">
+                                    <label class="form-check-label" for="ventaFinanciado">Financiado</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Marca, Modelo, Año -->
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-tag me-1"></i>Marca
+                            </label>
+                            <select class="form-select">
+                                <option selected>Seleccionar...</option>
+                                <option>Nissan</option>
+                                <option>Toyota</option>
+                                <option>Honda</option>
+                                <option>Mazda</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-car-front me-1"></i>Modelo
+                            </label>
+                            <select class="form-select">
+                                <option selected>Seleccionar...</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-calendar-event me-1"></i>Año
+                            </label>
+                            <input type="text" class="form-control" placeholder="Año...">
+                        </div>
+
+                        <div class="col-md-3 d-flex align-items-end">
+                            <button class="btn btn-primary w-100">
+                                <i class="bi bi-funnel me-1"></i>Filtrar
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de exportación -->
+                <!--div class="export-buttons mb-3">
+                    <button class="btn btn-success">
+                        <i class="bi bi-file-earmark-excel me-1"></i>Excel
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+                    </button>
+                    <button class="btn btn-info">
+                        <i class="bi bi-file-earmark-text me-1"></i>CSV
+                    </button>
+                    <button class="btn btn-primary float-end" onclick="window.location.href='#crear-publicacion'">
+                        <i class="bi bi-plus-circle me-1"></i>Nueva Publicación
+                    </button>
+                </div-->
+
+                <!-- Contador de resultados -->
+                <div class="mb-3">
+                    <h4 class="text-muted">
+                        <i class="bi bi-list-ul me-2"></i>1 Publicaciones
+                    </h4>
+                </div>
+
+                <!-- Listado de Publicaciones -->
+                <div class="publications-list">
+                    <!-- Publicación 1 -->
+                    <div class="publication-card">
+                        <div class="row g-3">
+                            <!-- Imagen -->
+                            <div class="col-md-2">
+                                <div class="publication-image">
+                                    <img src="https://via.placeholder.com/200x150/cccccc/666666?text=Imagen" 
+                                         alt="Vehículo" 
+                                         class="img-fluid rounded">
+                                </div>
+                            </div>
+
+                            <!-- Producto -->
+                            <div class="col-md-2">
+                                <div class="publication-info">
+                                    <h6 class="fw-bold mb-2">Producto</h6>
+                                    <p class="mb-1"><strong>Nissan Versa SR</strong></p>
+                                    <p class="mb-0 text-muted small">(2023)</p>
+                                    <p class="mb-0 text-muted small">36287 km</p>
+                                    <p class="mb-0 text-muted small">Gris</p>
+                                </div>
+                            </div>
+
+                            <!-- Precio -->
+                            <div class="col-md-2">
+                                <div class="publication-info">
+                                    <h6 class="fw-bold mb-2">Precio</h6>
+                                    <p class="mb-1 text-success fw-bold fs-5">$294,000</p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-calendar me-1"></i>26/12/2025
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Vendedor -->
+                            <div class="col-md-3">
+                                <div class="publication-info">
+                                    <h6 class="fw-bold mb-2">Vendedor</h6>
+                                    <p class="mb-0"><strong>Adriana Zepeda</strong></p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-envelope me-1"></i>azepeda@mazdaplasencia.com
+                                    </p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-geo-alt me-1"></i>Guadalajara (Jalisco)
+                                    </p>
+                                    <p class="mb-0 text-muted small">
+                                        <i class="bi bi-telephone me-1"></i>3315209274
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Moderación -->
+                            <div class="col-md-3">
+                                <div class="publication-info">
+                                    <h6 class="fw-bold mb-2">Moderación</h6>
+                                    <div class="moderation-tags">
+                                        <div class="moderation-tag bg-warning bg-opacity-25 mb-2 p-2 rounded">
+                                            <small>
+                                                <i class="bi bi-pencil me-1"></i>26/12/2025 14:13:19<br>
+                                                Modificación del Clasificado
+                                            </small>
+                                        </div>
+                                        <div class="moderation-tag bg-success bg-opacity-25 mb-2 p-2 rounded">
+                                            <small>
+                                                <i class="bi bi-check-circle me-1"></i>16/12/2025 11:47:04 ✔
+                                            </small>
+                                        </div>
+                                        <div class="moderation-tag bg-danger bg-opacity-25 p-2 rounded">
+                                            <small>
+                                                <i class="bi bi-exclamation-triangle me-1"></i>16/12/2025 12:24:39<br>
+                                                "Necesitas una cuenta profesional, perteneces a una agencia"
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <div class="d-flex justify-content-end gap-2">
+                                    <button class="btn btn-sm btn-outline-primary">
+                                        <i class="bi bi-eye me-1"></i>Ver
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-info">
+                                        <i class="bi bi-pencil me-1"></i>Editar
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-success">
+                                        <i class="bi bi-check-circle me-1"></i>Aprobar
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-danger">
+                                        <i class="bi bi-x-circle me-1"></i>Rechazar
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Paginación -->
+                <div class="pagination-controls">
+                    <div>
+                        <span class="text-muted">Mostrando 1-1 de 1 publicaciones</span>
+                    </div>
+                    <div>
+                        <nav>
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">Anterior</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ======================================== -->
+        <!-- SECCIÓN DE CONTROL NUEVOS -->
+        <!-- ======================================== -->
+        <section class="publications-section" id="control-nuevos">
+            <div class="container">
+                <!-- Encabezado de sección -->
+                <div class="section-header">
+                    <h2 class="mb-2">
+                        <i class="bi bi-car-front-fill text-success me-2"></i>
+                        Control de Publicaciones - Nuevos
+                    </h2>
+                    <p class="text-muted">Administra todas las publicaciones de vehículos nuevos del sistema</p>
+                </div>
+
+                <!-- Filtros y búsqueda -->
+                <div class="filter-section">
+                    <div class="row g-3">
+                        <!-- Estado publicación -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-toggles me-1"></i>Estado publicación
+                            </label>
+                            <div class="d-flex gap-3 flex-wrap">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estadoNuevos" id="estadoNuevosTodas" checked>
+                                    <label class="form-check-label" for="estadoNuevosTodas">Todas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estadoNuevos" id="estadoNuevosVigentes">
+                                    <label class="form-check-label" for="estadoNuevosVigentes">Vigentes</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="estadoNuevos" id="estadoNuevosVencidas">
+                                    <label class="form-check-label" for="estadoNuevosVencidas">Vencidas</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Última modificación -->
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-calendar me-1"></i>Última modificación
+                            </label>
+                            <div class="d-flex align-items-center gap-2">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="filtroFechaNuevos">
+                                    <label class="form-check-label" for="filtroFechaNuevos">Desde</label>
+                                </div>
+                                <input type="date" class="form-control" id="fechaDesdeNuevos" style="max-width: 200px;">
+                            </div>
+                        </div>
+
+                        <!-- Marca y Modelo -->
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-tag me-1"></i>Marca
+                            </label>
+                            <select class="form-select">
+                                <option selected>Seleccionar...</option>
+                                <option>Toyota</option>
+                                <option>Honda</option>
+                                <option>Mazda</option>
+                                <option>Nissan</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-car-front me-1"></i>Modelo
+                            </label>
+                            <select class="form-select">
+                                <option selected>Seleccionar...</option>
+                            </select>
+                        </div>
+
+                        <!-- Cuenta -->
+                        <div class="col-md-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-person me-1"></i>Cuenta
+                            </label>
+                            <input type="text" class="form-control" placeholder="Buscar por cuenta...">
+                        </div>
+
+                        <!-- Tipo venta y Min Descuento -->
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">
+                                <i class="bi bi-cash-stack me-1"></i>Tipo venta
+                            </label>
+                            <div class="d-flex gap-3 flex-wrap align-items-end">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ventaNuevos" id="ventaNuevosTodas" checked>
+                                    <label class="form-check-label" for="ventaNuevosTodas">Todas</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ventaNuevos" id="ventaNuevosPrecioFinal">
+                                    <label class="form-check-label" for="ventaNuevosPrecioFinal">Precio final</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ventaNuevos" id="ventaNuevosOferta">
+                                    <label class="form-check-label" for="ventaNuevosOferta">Oferta</label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="ventaNuevos" id="ventaNuevosFinanciado">
+                                    <label class="form-check-label" for="ventaNuevosFinanciado">Financiado</label>
+                                </div>
+                                <div style="margin-left: auto;">
+                                    <label class="form-label fw-semibold mb-1">
+                                        <i class="bi bi-percent me-1"></i>Min Descuento
+                                    </label>
+                                    <input type="text" class="form-control" placeholder="%" style="width: 100px; display: inline-block;">
+                                </div>
+                                <button class="btn btn-primary">
+                                    <i class="bi bi-funnel me-1"></i>Filtrar
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Botones de exportación -->
+                <div class="export-buttons mb-3">
+                    <button class="btn btn-success">
+                        <i class="bi bi-file-earmark-excel me-1"></i>Excel
+                    </button>
+                    <button class="btn btn-danger">
+                        <i class="bi bi-file-earmark-pdf me-1"></i>PDF
+                    </button>
+                    <button class="btn btn-info">
+                        <i class="bi bi-file-earmark-text me-1"></i>CSV
+                    </button>
+                </div>
+
+                <!-- Contador de resultados -->
+                <div class="mb-3">
+                    <h4 class="text-muted">
+                        <i class="bi bi-list-ul me-2"></i>95579 Publicaciones
+                    </h4>
+                </div>
+
+                <!-- Tabla de Publicaciones Nuevos -->
+                <div class="publications-table-wrapper">
+                    <table class="table table-hover table-bordered" id="nuevosTable">
+                        <thead>
+                            <tr>
+                                <th style="width: 30%;">
+                                    <i class="bi bi-box-seam me-1"></i>Producto
+                                </th>
+                                <th style="width: 12%;">
+                                    <i class="bi bi-currency-dollar me-1"></i>Precio
+                                </th>
+                                <th style="width: 12%;">
+                                    <i class="bi bi-book me-1"></i>Catálogo
+                                </th>
+                                <th style="width: 8%;">
+                                    <i class="bi bi-percent me-1"></i>%
+                                </th>
+                                <th style="width: 25%;">
+                                    <i class="bi bi-person me-1"></i>Vendedor
+                                </th>
+                                <th style="width: 13%;">
+                                    <i class="bi bi-gear me-1"></i>Acciones
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Registro 1 -->
+                            <tr>
+                                <td>
+                                    <div class="d-flex align-items-start gap-2">
+                                        <div class="product-images d-flex gap-1">
+                                            <div class="product-image-small">
+                                                <img src="https://via.placeholder.com/60x45/e9ecef/666666?text=1" 
+                                                     alt="Imagen 1" 
+                                                     class="img-fluid rounded">
+                                            </div>
+                                            <div class="product-image-small">
+                                                <img src="https://via.placeholder.com/60x45/e9ecef/666666?text=2" 
+                                                     alt="Imagen 2" 
+                                                     class="img-fluid rounded">
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <strong>Toyota Corolla</strong> Base Aut (2026)<br>
+                                            <small class="text-muted">Sedán</small>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <strong class="text-success">$425,600</strong><br>
+                                    <small class="text-muted">(29/10/2025)</small>
+                                </td>
+                                <td>
+                                    <strong>$425,600</strong>
+                                </td>
+                                <td class="text-center">
+                                    <span class="text-muted">-</span>
+                                </td>
+                                <td>
+                                    <strong>Toyota Zaragoza</strong><br>
+                                    <small class="text-muted">
+                                        <i class="bi bi-envelope me-1"></i>icarbajal@toyotazaragoza.com.mx
+                                    </small><br>
+                                    <small class="text-muted">
+                                        <i class="bi bi-geo-alt me-1"></i>Iztapalapa (Ciudad de México)
+                                    </small>
+                                </td>
+                                <td class="text-center">
+                                    <button class="btn btn-sm btn-outline-success" title="Aprobar">
+                                        <i class="bi bi-check-circle"></i>
+                                    </button>
+                                    <button class="btn btn-sm btn-outline-primary" title="Editar">
+                                        <i class="bi bi-pencil"></i>
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Paginación -->
+                <div class="pagination-controls">
+                    <div>
+                        <span class="text-muted">Mostrando 1-1 de 95579 publicaciones</span>
+                    </div>
+                    <div>
+                        <nav>
+                            <ul class="pagination mb-0">
+                                <li class="page-item disabled">
+                                    <a class="page-link" href="#">Anterior</a>
+                                </li>
+                                <li class="page-item active">
+                                    <a class="page-link" href="#">1</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">2</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">3</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">...</a>
+                                </li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">Siguiente</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- ===================== -->
-<!-- AGENCIA – VISTA MAIN -->
-<!-- ===================== -->
-<section class="wiki-section" id="agencias">
+        <!-- AGENCIA – VISTA MAIN -->
+        <!-- ===================== -->
+        <section class="wiki-section" id="agencias">
 
-    <!-- Header agencia -->
-    <div class="mb-3">
+            <!-- Header agencia -->
+            <div class="mb-3">
 
-        <!-- Nombre / Folio -->
-        <div class="mb-2">
-            <h2 class="sample-h3">MR Motors</h2>
-            <span class="font-name">#269737</span>
-        </div>
+                <!-- Nombre / Folio -->
+                <div class="mb-2">
+                    <h2 class="sample-h3">MR Motors</h2>
+                    <span class="font-name">#269737</span>
+                </div>
 
-        <!-- Botones de acción -->
-        <div class="d-flex align-items-center gap-2 mb-2">
+                <!-- Botones de acción -->
+                <div class="d-flex align-items-center gap-2 mb-2">
 
-            <!-- Cuenta dropdown -->
-            <div class="dropdown">
-                <button class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20"
-                        type="button"
-                        id="agenciaCuentaDropdown"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                    Cuenta
-                    <i class="bi bi-chevron-down small"></i>
-                </button>
+                    <!-- Cuenta dropdown -->
+                    <div class="dropdown">
+                        <button class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20"
+                                type="button"
+                                id="agenciaCuentaDropdown"
+                                data-bs-toggle="dropdown"
+                                aria-expanded="false">
+                            Cuenta
+                            <i class="bi bi-chevron-down small"></i>
+                        </button>
 
-                <ul class="dropdown-menu shadow-sm"
-                    aria-labelledby="agenciaCuentaDropdown">
+                        <ul class="dropdown-menu shadow-sm"
+                            aria-labelledby="agenciaCuentaDropdown">
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-person-check me-2"></i>
-                            Habilitar colaboradores
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person-check me-2"></i>
+                                    Habilitar colaboradores
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-shield-lock me-2"></i>
-                            Permisos Apps
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-shield-lock me-2"></i>
+                                    Permisos Apps
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-person-plus me-2"></i>
-                            Agregar colaborador
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-person-plus me-2"></i>
+                                    Agregar colaborador
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-arrow-repeat me-2"></i>
-                            Cambiar administrador
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-arrow-repeat me-2"></i>
+                                    Cambiar administrador
+                                </a>
+                            </li>
 
-                    <!-- Publicaciones -->
-                    <li>
-                        <a class="dropdown-item text-muted" href="#">
-                            <i class="bi bi-bag-check me-2"></i>
-                            Crear Publicaciones Normandía
-                        </a>
-                    </li>
+                            <!-- Publicaciones -->
+                            <li>
+                                <a class="dropdown-item text-muted" href="#">
+                                    <i class="bi bi-bag-check me-2"></i>
+                                    Crear Publicaciones Normandía
+                                </a>
+                            </li>
 
-                    <li><hr class="dropdown-divider"></li>
+                            <li><hr class="dropdown-divider"></li>
 
-                    <li class="px-3 py-1">
-                        <small class="text-danger fw-semibold">
-                            Zona peligrosa
-                        </small>
-                    </li>
+                            <li class="px-3 py-1">
+                                <small class="text-danger fw-semibold">
+                                    Zona peligrosa
+                                </small>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item text-danger" href="#">
-                            <i class="bi bi-slash-circle me-2"></i>
-                            Suspender
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="bi bi-slash-circle me-2"></i>
+                                    Suspender
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item text-warning" href="#">
-                            <i class="bi bi-box-seam me-2"></i>
-                            Remover productos
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item text-warning" href="#">
+                                    <i class="bi bi-box-seam me-2"></i>
+                                    Remover productos
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            <i class="bi bi-flag me-2"></i>
-                            Prospecto oficial
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item" href="#">
+                                    <i class="bi bi-flag me-2"></i>
+                                    Prospecto oficial
+                                </a>
+                            </li>
 
-                    <li>
-                        <a class="dropdown-item text-danger" href="#">
-                            <i class="bi bi-archive me-2"></i>
-                            Archivar agencia
-                        </a>
-                    </li>
+                            <li>
+                                <a class="dropdown-item text-danger" href="#">
+                                    <i class="bi bi-archive me-2"></i>
+                                    Archivar agencia
+                                </a>
+                            </li>
 
-                </ul>
+                        </ul>
+                    </div>
+
+                    <!-- Botón tienda (icon-only) -->
+                <button type="button"
+                            class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20"
+                            style="width: 38px; height: 34px;"
+                            title="Tienda">
+                        <span class="d-flex align-items-center justify-content-center h-100 w-100">
+                            <i class="bi bi-shop"></i>
+                        </span>
+                    </button>
+
+                    <!-- Productos -->
+            <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20 d-inline-flex align-items-center gap-2">
+            <span>Productos</span>
+            <span class="d-inline-flex align-items-center gap-2" aria-hidden="true">
+                <i class="bi bi-car-front-fill"></i>
+                <i class="bi bi-shop"></i>
+                <i class="bi bi-whatsapp"></i>
+            </span>
+        </button>
+
+                </div>
             </div>
 
-            <!-- Botón tienda (icon-only) -->
-           <button type="button"
-                    class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20"
-                    style="width: 38px; height: 34px;"
-                    title="Tienda">
-                <span class="d-flex align-items-center justify-content-center h-100 w-100">
-                    <i class="bi bi-shop"></i>
-                </span>
-            </button>
+            <!-- Tabs -->
+            <ul class="nav nav-tabs mb-0" role="tablist">
 
-            <!-- Productos -->
-    <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20 d-inline-flex align-items-center gap-2">
-    <span>Productos</span>
-    <span class="d-inline-flex align-items-center gap-2" aria-hidden="true">
-        <i class="bi bi-car-front-fill"></i>
-        <i class="bi bi-shop"></i>
-        <i class="bi bi-whatsapp"></i>
-    </span>
-</button>
+                <li class="nav-item">
+                    <button class="nav-link active"
+                            data-bs-toggle="tab"
+                            data-bs-target="#ag-colaboradores"
+                            type="button">
+                        Colaboradores
+                    </button>
+                </li>
 
-        </div>
-    </div>
+                <li class="nav-item">
+                    <button class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#ag-usado"
+                            type="button">
+                        Usado
+                    </button>
+                </li>
 
-    <!-- Tabs -->
-    <ul class="nav nav-tabs mb-0" role="tablist">
-
+                <li class="nav-item">
+                    <button class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#ag-nuevo"
+                            type="button">
+                        Nuevo
+                    </button>
+                </li>
         <li class="nav-item">
-            <button class="nav-link active"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ag-colaboradores"
-                    type="button">
-                Colaboradores
-            </button>
-        </li>
+                    <button class="nav-link"
+                            data-bs-toggle="tab"
+                            data-bs-target="#ag-sucursales"
+                            type="button">
+                        Sucursales
+                    </button>
+                </li>
+        </ul>
 
-        <li class="nav-item">
-            <button class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ag-usado"
-                    type="button">
-                Usado
-            </button>
-        </li>
-
-        <li class="nav-item">
-            <button class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ag-nuevo"
-                    type="button">
-                Nuevo
-            </button>
-        </li>
-<li class="nav-item">
-            <button class="nav-link"
-                    data-bs-toggle="tab"
-                    data-bs-target="#ag-sucursales"
-                    type="button">
-                Sucursales
-            </button>
-        </li>
-</ul>
-
-    <!-- Contenido tabs -->
-    <div class="tab-content border border-top-0 rounded-bottom p-3 bg-light">
-
-        <!-- Colaboradores -->
+            <!-- Contenido tabs -->
+            <div class="tab-content border border-top-0 rounded-bottom p-3 bg-light">
+          <!-- Colaboradores -->
         <div class="tab-pane fade show active" id="ag-colaboradores">
+		<!-- Tabla demo -->
+            <div id="sucursalesInfo" class="text-muted small mb-2">—</div>
 
-            <!-- Botones mini -->
-            <div class="d-flex gap-2 mb-3">
-                <button type="button"
-                        class="btn btn-sm u-btn-primary rounded"
-                        style="width: 34px; height: 34px; padding: 0;">
-                    <i class="bi bi-person"></i>
-                </button>
-
-                <button type="button"
-                        class="btn btn-sm u-btn-primary rounded"
-                        style="width: 34px; height: 34px; padding: 0;">
-                    <i class="bi bi-people"></i>
-                </button>
-            </div>
-
-            <!-- Tabla demo -->
-            <div class="table-responsive">
+		<div class="table-responsive">
                 <table class="table table-striped table-hover mb-0">
                     <tbody>
                         <tr>
-                            <td style="width: 40px;">
-                                <i class="bi bi-person-check text-success"></i>
+                            <td style="width: 86px;" class="align-middle">
+                                <div class="d-flex gap-2">
+                                    <button type="button"
+                                            class="btn btn-sm u-btn-primary rounded"
+                                            style="width: 34px; height: 34px; padding: 0;"
+                                            title="Usuario">
+                                        <i class="fa-solid fa-user"></i>
+                                    </button>
+                                    <button type="button"
+                                            class="btn btn-sm u-btn-primary rounded"
+                                            style="width: 34px; height: 34px; padding: 0;"
+                                            title="Vehículo">
+                                        <i class="fa-solid fa-car"></i>
+                                    </button>
+                                </div>
                             </td>
                             <td>
                                 <div class="fw-semibold">mon.rosas@gmail.com</div>
@@ -834,8 +2316,21 @@
                             </td>
                         </tr>
                         <tr>
-                            <td style="width: 40px;">
-                                <i class="bi bi-person text-secondary"></i>
+                            <td style="width: 86px;" class="align-middle">
+                                <div class="d-flex gap-2">
+                                    <button type="button"
+                                            class="btn btn-sm u-btn-primary rounded"
+                                            style="width: 34px; height: 34px; padding: 0;"
+                                            title="Usuario">
+                                        <i class="fa-solid fa-user"></i>
+                                    </button>
+                                    <button type="button"
+                                            class="btn btn-sm u-btn-primary rounded"
+                                            style="width: 34px; height: 34px; padding: 0;"
+                                            title="Vehículo">
+                                        <i class="fa-solid fa-car"></i>
+                                    </button>
+                                </div>
                             </td>
                             <td>
                                 <div class="fw-semibold">demo.user@correo.com</div>
@@ -845,859 +2340,855 @@
                     </tbody>
                 </table>
             </div>
+        </div>
+
+            <div class="tab-pane fade" id="ag-usado">
+            <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+                <div class="d-flex align-items-center gap-2">
+                <h4 class="mb-0 fw-semibold">Publicaciones</h4>
+                <span class="text-muted">848</span>
+                <button type="button" class="btn btn-sm btn-outline-secondary" title="Actualizar">
+                    <i class="fa-solid fa-rotate-right"></i>
+                </button>
+                </div>
+            </div>
+            <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+                <div class="input-group" style="max-width: 420px;">
+                <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input id="usadosSearch" type="text" class="form-control" placeholder="Buscar publicación...">
+                </div>
+
+                <div class="d-flex align-items-center gap-2">
+                <label class="text-muted small mb-0">Mostrar</label>
+                <select id="usadosPageSize" class="form-select form-select-sm" style="width: 90px;">
+                    <option value="5">5</option>
+                    <option value="10" selected>10</option>
+                    <option value="25">25</option>
+                    <option value="50">50</option>
+                </select>
+                </div>
+            </div>
+
+        <div id="usadosInfo" class="text-muted small mb-2">—</div>
+
+        <div class="table-responsive">
+            <table id="usadosTable" class="table table-hover mb-0 align-middle"
+                style="border-collapse: separate; border-spacing: 0 12px;">
+            <thead class="table-light">
+                <tr>
+                <th style="width: 110px;" class="text-muted small fw-semibold">Fechas</th>
+                <th style="min-width: 380px;">Producto</th>
+                <th style="width: 240px;">Detalle</th>
+                <th style="width: 160px;">Precio</th>
+                <th style="width: 140px;" class="text-muted">Métricas</th>
+                <th style="width: 120px;" class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- Row 1 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>27/04/2025</div>
+                    <div>02/05/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/Infiniti_QX80_2025_3.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">JAC J7 Quantum Aut</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2022)</div>
+                    <div class="text-muted">92000 km</div>
+                    <div class="text-muted">Blanco</div>
+                    <div class="text-muted">(15 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$291,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">127</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>27/04/2025</div>
+                    <div>02/05/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/ford_fusion_1.jpg" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">JAC J7 Quantum Aut</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2022)</div>
+                    <div class="text-muted">92000 km</div>
+                    <div class="text-muted">Blanco</div>
+                    <div class="text-muted">(15 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>Autocosmos</div>
+                    <div class="text-muted mt-2">
+                    <div><span class="text-muted">enganche</span> <span class="fw-semibold text-dark">$79,298</span></div>
+                    <div><span class="text-muted">cuota</span> <span class="fw-semibold text-dark">$6,064</span></div>
+                    </div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$291,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">122</span></div>
+                    <div>ver datos <span class="fw-semibold text-dark">2</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>28/04/2025</div>
+                    <div>20/12/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/Ford_lobo_2022_1.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">Ford Maverick Lariat</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2023)</div>
+                    <div class="text-muted">51000 km</div>
+                    <div class="text-muted">Negro</div>
+                    <div class="text-muted">(20 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$550,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">56</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+            </tbody>
+            </table>
+        </div>
 
         </div>
 
-        <div class="tab-pane fade" id="ag-usado">
-
-  <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
-    <div class="d-flex align-items-center gap-2">
-      <h4 class="mb-0 fw-semibold">Publicaciones</h4>
-      <span class="text-muted">848</span>
-      <button type="button" class="btn btn-sm btn-outline-secondary" title="Actualizar">
-        <i class="fa-solid fa-rotate-right"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-    <div class="input-group" style="max-width: 420px;">
-      <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input id="usadosSearch" type="text" class="form-control" placeholder="Buscar publicación...">
-    </div>
-
-    <div class="d-flex align-items-center gap-2">
-      <label class="text-muted small mb-0">Mostrar</label>
-      <select id="usadosPageSize" class="form-select form-select-sm" style="width: 90px;">
-        <option value="5">5</option>
-        <option value="10" selected>10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="usadosInfo" class="text-muted small mb-2">—</div>
-
-  <div class="table-responsive">
-    <table id="usadosTable" class="table table-hover mb-0 align-middle"
-           style="border-collapse: separate; border-spacing: 0 12px;">
-      <thead class="table-light">
-        <tr>
-          <th style="width: 110px;" class="text-muted small fw-semibold">Fechas</th>
-          <th style="min-width: 380px;">Producto</th>
-          <th style="width: 240px;">Detalle</th>
-          <th style="width: 160px;">Precio</th>
-          <th style="width: 140px;" class="text-muted">Métricas</th>
-          <th style="width: 120px;" class="text-end">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- Row 1 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>27/04/2025</div>
-            <div>02/05/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/Infiniti_QX80_2025_3.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">JAC J7 Quantum Aut</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2022)</div>
-            <div class="text-muted">92000 km</div>
-            <div class="text-muted">Blanco</div>
-            <div class="text-muted">(15 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$291,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">127</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Row 2 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>27/04/2025</div>
-            <div>02/05/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/ford_fusion_1.jpg" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">JAC J7 Quantum Aut</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2022)</div>
-            <div class="text-muted">92000 km</div>
-            <div class="text-muted">Blanco</div>
-            <div class="text-muted">(15 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>Autocosmos</div>
-            <div class="text-muted mt-2">
-              <div><span class="text-muted">enganche</span> <span class="fw-semibold text-dark">$79,298</span></div>
-              <div><span class="text-muted">cuota</span> <span class="fw-semibold text-dark">$6,064</span></div>
-            </div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$291,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">122</span></div>
-            <div>ver datos <span class="fw-semibold text-dark">2</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Row 3 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>28/04/2025</div>
-            <div>20/12/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/Ford_lobo_2022_1.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">Ford Maverick Lariat</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2023)</div>
-            <div class="text-muted">51000 km</div>
-            <div class="text-muted">Negro</div>
-            <div class="text-muted">(20 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$550,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">56</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-        <div class="tab-pane fade" id="ag-nuevo">
-
-  <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
-    <div class="d-flex align-items-center gap-2">
-      <h4 class="mb-0 fw-semibold">50 Nuevo</h4>
-      <span class="text-muted">848</span>
-      <button type="button" class="btn btn-sm btn-outline-secondary" title="Actualizar">
-        <i class="fa-solid fa-rotate-right"></i>
-      </button>
-    </div>
-  </div>
-
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-    <div class="input-group" style="max-width: 420px;">
-      <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input id="nuevoSearch" type="text" class="form-control" placeholder="Buscar publicación nueva...">
-    </div>
-
-    <div class="d-flex align-items-center gap-2">
-      <label class="text-muted small mb-0">Mostrar</label>
-      <select id="nuevoPageSize" class="form-select form-select-sm" style="width: 90px;">
-        <option value="5">5</option>
-        <option value="10" selected>10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="nuevoInfo" class="text-muted small mb-2">—</div>
-
-  <div class="table-responsive">
-    <table id="nuevoTable" class="table table-hover mb-0 align-middle"
-           style="border-collapse: separate; border-spacing: 0 12px;">
-      <thead class="table-light">
-        <tr>
-          <th style="width: 110px;" class="text-muted small fw-semibold">Fechas</th>
-          <th style="min-width: 380px;">Producto</th>
-          <th style="width: 240px;">Detalle</th>
-          <th style="width: 160px;">Precio</th>
-          <th style="width: 140px;" class="text-muted">Métricas</th>
-          <th style="width: 120px;" class="text-end">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <!-- Row 1 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>27/04/2025</div>
-            <div>02/05/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/Infiniti_QX80_2025_3.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">JAC J7 Quantum Aut</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2026)</div>
-            <div class="text-muted">0 km</div>
-            <div class="text-muted">Blanco</div>
-            <div class="text-muted">(15 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$291,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">127</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Row 2 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>27/04/2025</div>
-            <div>02/05/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/ford_fusion_1.jpg" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">JAC J7 Quantum Aut</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2026)</div>
-            <div class="text-muted">0 km</div>
-            <div class="text-muted">Blanco</div>
-            <div class="text-muted">(15 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>Autocosmos</div>
-            <div class="text-muted mt-2">
-              <div><span class="text-muted">enganche</span> <span class="fw-semibold text-dark">$79,298</span></div>
-              <div><span class="text-muted">cuota</span> <span class="fw-semibold text-dark">$6,064</span></div>
-            </div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$291,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">122</span></div>
-            <div>ver datos <span class="fw-semibold text-dark">2</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <!-- Row 3 -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0 text-muted small">
-            <div>28/04/2025</div>
-            <div>20/12/2025</div>
-          </td>
-
-          <td class="border-0">
-            <div class="d-flex gap-3">
-              <img src="img/publications/Ford_lobo_2022_1.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
-              <div>
-                <div class="fw-semibold">Ford Maverick Lariat</div>
-                <div class="text-muted small">dponzanelli@zapata.com.mx</div>
-              </div>
-            </div>
-          </td>
-
-          <td class="border-0 small">
-            <div class="fw-semibold">(2026)</div>
-            <div class="text-muted">0 km</div>
-            <div class="text-muted">Negro</div>
-            <div class="text-muted">(20 fotos)</div>
-            <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
-          </td>
-
-          <td class="border-0">
-            <div class="fw-semibold">$550,000</div>
-          </td>
-
-          <td class="border-0 text-muted small">
-            <div>consultas <span class="fw-semibold text-dark">0</span></div>
-            <div>visitas <span class="fw-semibold text-dark">56</span></div>
-          </td>
-
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
-                <i class="fa-solid fa-ban"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-        
-
-        
-
-        
-
-        <div class="tab-pane fade" id="ag-sucursales">
-
-  <div class="d-flex align-items-center gap-2 mb-3">
-    <h4 class="mb-0 fw-semibold">Sucursales</h4>
-  </div>
-
-  <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
-    <div class="input-group" style="max-width: 360px;">
-      <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
-      <input id="sucursalesSearch" type="text" class="form-control" placeholder="Buscar sucursal...">
-    </div>
-
-    <div class="d-flex align-items-center gap-2">
-      <label class="text-muted small mb-0">Mostrar</label>
-      <select id="sucursalesPageSize" class="form-select form-select-sm" style="width: 90px;">
-        <option value="5">5</option>
-        <option value="10" selected>10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-      </select>
-    </div>
-  </div>
-
-  <div id="sucursalesInfo" class="text-muted small mb-2">—</div>
-
-  <div class="table-responsive">
-    <table id="sucursalesTable" class="table table-hover mb-0 align-middle"
-           style="border-collapse: separate; border-spacing: 0 12px;">
-      <thead class="table-light">
-        <tr>
-          <th style="width: 260px;">Sucursal</th>
-          <th>Dirección</th>
-          <th style="width: 260px;">Contacto</th>
-          <th class="text-end" style="width: 120px;">Acciones</th>
-        </tr>
-      </thead>
-      <tbody>
-
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Central Seminuevos</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Tlalnepantla de Baz, Av. Mario Colín S/N Esquina Temazcal, La Loma, 54060
-          </td>
-          <td class="border-0 text-muted small">
-            <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Aeropuerto</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Texcoco, Vía Rápida Lechería-Texcoco Los Reyes Km. 23, Texcoco de Mora Centro, 56100
-          </td>
-          <td class="border-0 text-muted small">
-            <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Atizapán</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Atizapán de Zaragoza, Av. Lago de Guadalupe Lt.2 Mz.32-A, Villas de la Hacienda, 52929
-          </td>
-          <td class="border-0 text-muted small">
-            <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Pachuca</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Hidalgo, Pachuca de Soto, Blvd. Felipe Ángeles 2307, Venta Prieta, 42083
-          </td>
-          <td class="border-0 text-muted small">
-            <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Go-On Querétaro</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Querétaro, Querétaro, Priv. de los Industriales 115, Benito Juárez, 76120
-          </td>
-          <td class="border-0 text-muted small">
-            <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group" role="group">
-              <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
-
-      </tbody>
-    </table>
-  </div>
-
-</div>
-
-        
-
-    </div>
-
-</section>
-
-    <section class="wiki-section" id="agencias-status-servicio">
-    <h2>Estatus servicio Agencias</h2>
-    <p class="g-color-gray-dark-v4 mb-4">
-        Pantalla de análisis de actividad por periodo (año/mes) y filtros avanzados.
-    </p>
-
-    <form class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-rounded-5 mb-4">
-        <div class="row g-mb-15">
-            <div class="col-md-3">
-                <label class="form-label fw-semibold">Desde</label>
-                <input type="date" class="form-control" value="2025-11-01">
-            </div>
-            <div class="col-md-3">
-                <label class="form-label fw-semibold">Hasta</label>
-                <input type="date" class="form-control" value="2025-11-30">
+                <div class="tab-pane fade" id="ag-nuevo">
+
+        <div class="d-flex align-items-center justify-content-between gap-2 mb-3">
+            <div class="d-flex align-items-center gap-2">
+            <h4 class="mb-0 fw-semibold">50 Nuevo</h4>
+            <span class="text-muted">848</span>
+            <button type="button" class="btn btn-sm btn-outline-secondary" title="Actualizar">
+                <i class="fa-solid fa-rotate-right"></i>
+            </button>
             </div>
         </div>
 
-        <a href="#" class="d-inline-block g-mb-15">Filtro avanzado</a>
-
-        <div class="row g-mb-15">
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Ejecutivo</label>
-                <input type="text" class="form-control" placeholder="">
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div class="input-group" style="max-width: 420px;">
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input id="nuevoSearch" type="text" class="form-control" placeholder="Buscar publicación nueva...">
             </div>
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Estado Comercial</label>
-                <select class="form-select">
-                    <option selected>Pago</option>
-                    <option>Prueba</option>
-                    <option>Vencido</option>
-                </select>
+
+            <div class="d-flex align-items-center gap-2">
+            <label class="text-muted small mb-0">Mostrar</label>
+            <select id="nuevoPageSize" class="form-select form-select-sm" style="width: 90px;">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
             </div>
         </div>
 
-        <div class="row g-mb-15">
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Grupo</label>
-                <select class="form-select">
-                    <option selected>Todos</option>
-                </select>
+        <div id="nuevoInfo" class="text-muted small mb-2">—</div>
+
+        <div class="table-responsive">
+            <table id="nuevoTable" class="table table-hover mb-0 align-middle"
+                style="border-collapse: separate; border-spacing: 0 12px;">
+            <thead class="table-light">
+                <tr>
+                <th style="width: 110px;" class="text-muted small fw-semibold">Fechas</th>
+                <th style="min-width: 380px;">Producto</th>
+                <th style="width: 240px;">Detalle</th>
+                <th style="width: 160px;">Precio</th>
+                <th style="width: 140px;" class="text-muted">Métricas</th>
+                <th style="width: 120px;" class="text-end">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- Row 1 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>27/04/2025</div>
+                    <div>02/05/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/Infiniti_QX80_2025_3.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">JAC J7 Quantum Aut</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2026)</div>
+                    <div class="text-muted">0 km</div>
+                    <div class="text-muted">Blanco</div>
+                    <div class="text-muted">(15 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$291,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">127</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- Row 2 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>27/04/2025</div>
+                    <div>02/05/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/ford_fusion_1.jpg" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">JAC J7 Quantum Aut</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2026)</div>
+                    <div class="text-muted">0 km</div>
+                    <div class="text-muted">Blanco</div>
+                    <div class="text-muted">(15 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>Autocosmos</div>
+                    <div class="text-muted mt-2">
+                    <div><span class="text-muted">enganche</span> <span class="fw-semibold text-dark">$79,298</span></div>
+                    <div><span class="text-muted">cuota</span> <span class="fw-semibold text-dark">$6,064</span></div>
+                    </div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$291,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">122</span></div>
+                    <div>ver datos <span class="fw-semibold text-dark">2</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <!-- Row 3 -->
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0 text-muted small">
+                    <div>28/04/2025</div>
+                    <div>20/12/2025</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="d-flex gap-3">
+                    <img src="img/publications/Ford_lobo_2022_1.webp" alt="auto" style="width:92px;height:72px;object-fit:cover;border-radius:8px;">
+                    <div>
+                        <div class="fw-semibold">Ford Maverick Lariat</div>
+                        <div class="text-muted small">dponzanelli@zapata.com.mx</div>
+                    </div>
+                    </div>
+                </td>
+
+                <td class="border-0 small">
+                    <div class="fw-semibold">(2026)</div>
+                    <div class="text-muted">0 km</div>
+                    <div class="text-muted">Negro</div>
+                    <div class="text-muted">(20 fotos)</div>
+                    <div class="text-muted"><i class="fa-solid fa-play me-1"></i>MX-Intelimotor</div>
+                </td>
+
+                <td class="border-0">
+                    <div class="fw-semibold">$550,000</div>
+                </td>
+
+                <td class="border-0 text-muted small">
+                    <div>consultas <span class="fw-semibold text-dark">0</span></div>
+                    <div>visitas <span class="fw-semibold text-dark">56</span></div>
+                </td>
+
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-warning" title="Suspender">
+                        <i class="fa-solid fa-ban"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+            </tbody>
+            </table>
+        </div>
+
+        </div>
+
+                
+
+                
+
+                
+
+                <div class="tab-pane fade" id="ag-sucursales">
+
+        <div class="d-flex align-items-center gap-2 mb-3">
+            <h4 class="mb-0 fw-semibold">Sucursales</h4>
+        </div>
+
+        <div class="d-flex flex-wrap align-items-center justify-content-between gap-2 mb-3">
+            <div class="input-group" style="max-width: 360px;">
+            <span class="input-group-text"><i class="fa-solid fa-magnifying-glass"></i></span>
+            <input id="sucursalesSearch" type="text" class="form-control" placeholder="Buscar sucursal...">
             </div>
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Aplicación</label>
-                <select class="form-select">
-                    <option selected>Todas</option>
-                </select>
+
+            <div class="d-flex align-items-center gap-2">
+            <label class="text-muted small mb-0">Mostrar</label>
+            <select id="sucursalesPageSize" class="form-select form-select-sm" style="width: 90px;">
+                <option value="5">5</option>
+                <option value="10" selected>10</option>
+                <option value="25">25</option>
+                <option value="50">50</option>
+            </select>
             </div>
         </div>
 
-        <div class="row g-mb-15">
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Provincia/Estado</label>
-                <select class="form-select">
-                    <option selected>Todas</option>
-                </select>
-            </div>
-            <div class="col-md-6">
-                <label class="form-label fw-semibold">Asociación</label>
-                <select class="form-select">
-                    <option selected>Todas</option>
-                </select>
-            </div>
+        <div id="sucursalesInfo" class="text-muted small mb-2">—</div>
+
+        <div class="table-responsive">
+            <table id="sucursalesTable" class="table table-hover mb-0 align-middle"
+                style="border-collapse: separate; border-spacing: 0 12px;">
+            <thead class="table-light">
+                <tr>
+                <th style="width: 260px;">Sucursal</th>
+                <th>Dirección</th>
+                <th style="width: 260px;">Contacto</th>
+                <th class="text-end" style="width: 120px;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0">
+                    <div class="fw-semibold">Central Seminuevos</div>
+                    <div class="text-muted small">Comercial</div>
+                </td>
+                <td class="border-0 text-muted small">
+                    Estado de México, Tlalnepantla de Baz, Av. Mario Colín S/N Esquina Temazcal, La Loma, 54060
+                </td>
+                <td class="border-0 text-muted small">
+                    <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
+                    <div class="mt-1">
+                    <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
+                    </div>
+                    <div class="mt-1">
+                    <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
+                    </div>
+                </td>
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0">
+                    <div class="fw-semibold">Ford Zapata Aeropuerto</div>
+                    <div class="text-muted small">Comercial</div>
+                </td>
+                <td class="border-0 text-muted small">
+                    Estado de México, Texcoco, Vía Rápida Lechería-Texcoco Los Reyes Km. 23, Texcoco de Mora Centro, 56100
+                </td>
+                <td class="border-0 text-muted small">
+                    <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
+                    <div class="mt-1">
+                    <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
+                    </div>
+                    <div class="mt-1">
+                    <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
+                    </div>
+                </td>
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0">
+                    <div class="fw-semibold">Ford Zapata Atizapán</div>
+                    <div class="text-muted small">Comercial</div>
+                </td>
+                <td class="border-0 text-muted small">
+                    Estado de México, Atizapán de Zaragoza, Av. Lago de Guadalupe Lt.2 Mz.32-A, Villas de la Hacienda, 52929
+                </td>
+                <td class="border-0 text-muted small">
+                    <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
+                    <div class="mt-1">
+                    <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
+                    </div>
+                    <div class="mt-1">
+                    <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
+                    </div>
+                </td>
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0">
+                    <div class="fw-semibold">Ford Zapata Pachuca</div>
+                    <div class="text-muted small">Comercial</div>
+                </td>
+                <td class="border-0 text-muted small">
+                    Hidalgo, Pachuca de Soto, Blvd. Felipe Ángeles 2307, Venta Prieta, 42083
+                </td>
+                <td class="border-0 text-muted small">
+                    <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
+                    <div class="mt-1">
+                    <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
+                    </div>
+                    <div class="mt-1">
+                    <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
+                    </div>
+                </td>
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+                <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
+                <td class="border-0">
+                    <div class="fw-semibold">Go-On Querétaro</div>
+                    <div class="text-muted small">Comercial</div>
+                </td>
+                <td class="border-0 text-muted small">
+                    Querétaro, Querétaro, Priv. de los Industriales 115, Benito Juárez, 76120
+                </td>
+                <td class="border-0 text-muted small">
+                    <div><span class="fw-semibold text-dark">Postventa:</span> dponzanelli@zapata.com.mx</div>
+                    <div class="mt-1">
+                    <i class="fa-solid fa-phone me-2 text-primary"></i><a href="tel:+5215514597010">+52 1 55 1459 7010</a>
+                    </div>
+                    <div class="mt-1">
+                    <i class="fa-brands fa-whatsapp me-2 text-success"></i><a href="https://wa.me/5215514597010" target="_blank" rel="noopener">+52 1 55 1459 7010</a>
+                    </div>
+                </td>
+                <td class="border-0 text-end">
+                    <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-sm btn-outline-primary" title="Editar">
+                        <i class="fa-solid fa-pen"></i>
+                    </button>
+                    <button type="button" class="btn btn-sm btn-outline-danger" title="Eliminar">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                    </div>
+                </td>
+                </tr>
+
+            </tbody>
+            </table>
         </div>
 
-        <div class="d-flex align-items-center justify-content-between mt-4">
-            <button type="button" class="btn btn-secondary btn-sm">Download</button>
+        </div>
+
+                
+
+            </div>
+
+        </section>
+
+        <section class="wiki-section" id="agencias-status-servicio">
+            <h2>Estatus servicio Agencias</h2>
+            <p class="g-color-gray-dark-v4 mb-4">
+                Pantalla de análisis de actividad por periodo (año/mes) y filtros avanzados.
+            </p>
+
+            <form class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-rounded-5 mb-4">
+                <div class="row g-mb-15">
+                    <div class="col-md-3">
+                        <label class="form-label fw-semibold">Desde</label>
+                        <input type="date" class="form-control" value="2025-11-01">
+                    </div>
+                    <div class="col-md-3">
+                        <label class="form-label fw-semibold">Hasta</label>
+                        <input type="date" class="form-control" value="2025-11-30">
+                    </div>
+                </div>
+
+                <a href="#" class="d-inline-block g-mb-15">Filtro avanzado</a>
+
+                <div class="row g-mb-15">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Ejecutivo</label>
+                        <input type="text" class="form-control" placeholder="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Estado Comercial</label>
+                        <select class="form-select">
+                            <option selected>Pago</option>
+                            <option>Prueba</option>
+                            <option>Vencido</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-mb-15">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Grupo</label>
+                        <select class="form-select">
+                            <option selected>Todos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Aplicación</label>
+                        <select class="form-select">
+                            <option selected>Todas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="row g-mb-15">
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Provincia/Estado</label>
+                        <select class="form-select">
+                            <option selected>Todas</option>
+                        </select>
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label fw-semibold">Asociación</label>
+                        <select class="form-select">
+                            <option selected>Todas</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="d-flex align-items-center justify-content-between mt-4">
+                    <button type="button" class="btn btn-secondary btn-sm">Download</button>
+                    <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20">
+                        Analizar
+                    </button>
+                </div>
+            </form>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Admin</th>
+                            <th>Agencia</th>
+                            <th>Info. Comercial</th>
+                            <th>Publicaciones</th>
+                            <th>Consultas</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div class="fw-semibold">María José Ponce</div>
+                                <div class="text-muted small">Oaxaca de Juárez</div>
+                            </td>
+                            <td>
+                                <div class="fw-semibold">Ford Dinastía Oaxaca</div>
+                                <div class="text-muted small">#264171</div>
+                            </td>
+                            <td>
+                                <div class="text-muted small">monserrat@autocosmos.com</div>
+                            </td>
+                            <td>1</td>
+                            <td>0</td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
+                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wiki-section" id="agencias-sin-gestion-consultas">
+            <h2>Sin gestión consultas</h2>
+            <p class="g-color-gray-dark-v4 mb-4">
+                Vista enfocada en cuentas con consultas sin seguimiento (placeholder).
+            </p>
+
+            <div class="table-responsive">
+                <table class="table table-striped table-hover mb-0">
+                    <thead>
+                        <tr>
+                            <th>Agencia</th>
+                            <th>Última consulta</th>
+                            <th class="text-end">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">Ford Zamora</td>
+                            <td>—</td>
+                            <td class="text-end">
+                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="wiki-section" id="agencias-grupos-concesionarias">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
+            <h2 class="mb-0">Grupos <span class="text-muted">(6)</span></h2>
             <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20">
-                Analizar
+            Agregar
             </button>
         </div>
-    </form>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Admin</th>
-                    <th>Agencia</th>
-                    <th>Info. Comercial</th>
-                    <th>Publicaciones</th>
-                    <th>Consultas</th>
-                    <th class="text-end">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>
-                        <div class="fw-semibold">María José Ponce</div>
-                        <div class="text-muted small">Oaxaca de Juárez</div>
-                    </td>
-                    <td>
-                        <div class="fw-semibold">Ford Dinastía Oaxaca</div>
-                        <div class="text-muted small">#264171</div>
-                    </td>
-                    <td>
-                        <div class="text-muted small">monserrat@autocosmos.com</div>
-                    </td>
-                    <td>1</td>
-                    <td>0</td>
-                    <td class="text-end">
-                        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
-                        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+        <div class="row">
+            
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/ARCA.jpg" alt="ARCA">
+            <div class="card-body">
+            <div class="fw-semibold">ARCA</div>
+            <div class="text-muted small">(arca)</div>
+            <a class="small" href="https://seminuevosarca.com.mx/" target="_blank">https://seminuevosarca.com.mx/</a>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
-<section class="wiki-section" id="agencias-sin-gestion-consultas">
-    <h2>Sin gestión consultas</h2>
-    <p class="g-color-gray-dark-v4 mb-4">
-        Vista enfocada en cuentas con consultas sin seguimiento (placeholder).
-    </p>
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/AutoFinMexico.jpg" alt="Autofin">
+            <div class="card-body">
+            <div class="fw-semibold">Autofin</div>
+            <div class="text-muted small">(autofin)</div>
+            
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-hover mb-0">
-            <thead>
-                <tr>
-                    <th>Agencia</th>
-                    <th>Última consulta</th>
-                    <th class="text-end">Acciones</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td class="fw-semibold">Ford Zamora</td>
-                    <td>—</td>
-                    <td class="text-end">
-                        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-eye"></i></button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</section>
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/Cerver.jpg" alt="Cever">
+            <div class="card-body">
+            <div class="fw-semibold">Cever</div>
+            <div class="text-muted small">(cever)</div>
+            <a class="small" href="https://www.cever.com.mx/" target="_blank">https://www.cever.com.mx/</a>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/Kasa.jpg" alt="Kasa">
+            <div class="card-body">
+            <div class="fw-semibold">Kasa</div>
+            <div class="text-muted small">(kasa)</div>
+            <a class="small" href="https://seminuevoskasa.com/" target="_blank">https://seminuevoskasa.com/</a>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
-<section class="wiki-section" id="agencias-grupos-concesionarias">
-  <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
-    <h2 class="mb-0">Grupos <span class="text-muted">(6)</span></h2>
-    <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20">
-      Agregar
-    </button>
-  </div>
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/torres-corzo.jpg" alt="Torres-Corzo">
+            <div class="card-body">
+            <div class="fw-semibold">Torres-Corzo</div>
+            <div class="text-muted small">(torres-corzo)</div>
+            <a class="small" href="https://www.torrescorzoseminuevos.com.mx/" target="_blank">https://www.torrescorzoseminuevos.com.mx/</a>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
-  <div class="row">
-    
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/ARCA.jpg" alt="ARCA">
-    <div class="card-body">
-      <div class="fw-semibold">ARCA</div>
-      <div class="text-muted small">(arca)</div>
-      <a class="small" href="https://seminuevosarca.com.mx/" target="_blank">https://seminuevosarca.com.mx/</a>
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
+        <div class="col-md-3 mb-4">
+        <div class="card shadow-sm h-100">
+            <img class="card-img-top" src="img/grupos/zapata.jpg" alt="Zapata">
+            <div class="card-body">
+            <div class="fw-semibold">Zapata</div>
+            <div class="text-muted small">(zapata)</div>
+            <a class="small" href="https://www.zapata.com.mx/soluciones-integrales" target="_blank">https://www.zapata.com.mx/soluciones-integrales</a>
+            </div>
+            <div class="card-footer bg-white border-0 pt-0">
+            <div class="d-flex gap-2">
+                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
+                <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
+                <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
+            </div>
+            </div>
+        </div>
+        </div>
 
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/AutoFinMexico.jpg" alt="Autofin">
-    <div class="card-body">
-      <div class="fw-semibold">Autofin</div>
-      <div class="text-muted small">(autofin)</div>
-      
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/Cerver.jpg" alt="Cever">
-    <div class="card-body">
-      <div class="fw-semibold">Cever</div>
-      <div class="text-muted small">(cever)</div>
-      <a class="small" href="https://www.cever.com.mx/" target="_blank">https://www.cever.com.mx/</a>
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/Kasa.jpg" alt="Kasa">
-    <div class="card-body">
-      <div class="fw-semibold">Kasa</div>
-      <div class="text-muted small">(kasa)</div>
-      <a class="small" href="https://seminuevoskasa.com/" target="_blank">https://seminuevoskasa.com/</a>
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/torres-corzo.jpg" alt="Torres-Corzo">
-    <div class="card-body">
-      <div class="fw-semibold">Torres-Corzo</div>
-      <div class="text-muted small">(torres-corzo)</div>
-      <a class="small" href="https://www.torrescorzoseminuevos.com.mx/" target="_blank">https://www.torrescorzoseminuevos.com.mx/</a>
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div class="col-md-3 mb-4">
-  <div class="card shadow-sm h-100">
-    <img class="card-img-top" src="img/grupos/zapata.jpg" alt="Zapata">
-    <div class="card-body">
-      <div class="fw-semibold">Zapata</div>
-      <div class="text-muted small">(zapata)</div>
-      <a class="small" href="https://www.zapata.com.mx/soluciones-integrales" target="_blank">https://www.zapata.com.mx/soluciones-integrales</a>
-    </div>
-    <div class="card-footer bg-white border-0 pt-0">
-      <div class="d-flex gap-2">
-        <button class="btn btn-sm btn-outline-primary"><i class="bi bi-pencil"></i></button>
-        <button class="btn btn-sm btn-outline-secondary"><i class="bi bi-box-arrow-up-right"></i></button>
-        <button class="btn btn-sm btn-outline-danger"><i class="bi bi-trash"></i></button>
-      </div>
-    </div>
-  </div>
-</div>
-
-  </div>
-</section>
+        </div>
+        </section>
 
 
         <!-- Paleta de Colores -->
