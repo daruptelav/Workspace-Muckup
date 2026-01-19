@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet"href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-..."crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1403,13 +1403,236 @@
 </div>
 
 
-
-
-
         <!-- ===================== -->
         <!-- AGENCIA – VISTA MAIN -->
         <!-- ===================== -->
         <section class="wiki-section" id="agencias">
+
+<!-- ================= BUSQUEDA DE AGENCIAS ================= -->
+<div class="card border-0 shadow-sm mb-4">
+  <div class="card-body p-4">
+
+    <!-- Header -->
+    <div class="mb-3">
+      <h2 class="h4 mb-1">¿Qué agencia buscamos?</h2>
+      <div class="text-muted small">
+        Necesarias mínimo 4 letras para la búsqueda.
+      </div>
+    </div>
+
+    <!-- Buscador + botones -->
+    <div class="p-3 rounded-4 border bg-light">
+      <div class="row g-3 align-items-center">
+
+        <div class="col-lg-8">
+          <div class="input-group input-group-lg">
+            <span class="input-group-text bg-white border-0">
+              <i class="fa fa-search text-muted"></i>
+            </span>
+            <input
+              type="text"
+              class="form-control border-0"
+              placeholder="Buscando..."
+              aria-label="Buscar agencia">
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="d-flex gap-2 justify-content-lg-end">
+            <button type="button"
+                    class="btn btn-primary px-4 d-flex align-items-center gap-2">
+              <i class="fa fa-search"></i>
+              Buscar
+            </button>
+            <button
+            type="button"
+            class="btn btn-outline-secondary px-4 d-flex align-items-center gap-2"
+            id="btnToggleFiltros"
+            data-toggle="filters"
+            data-target="#filtersPanel"
+            aria-expanded="false">
+            <i class="bi bi-sliders"></i>
+            Filtros
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PANEL DE FILTROS -->
+    <div class="mt-4 p-3 rounded-4 border d-none" id="filtersPanel">
+
+      <div class="row g-3">
+
+        <!-- Tipo Concesionaria / Servicio -->
+        <div class="col-12">
+          <label class="form-label fw-semibold mb-2">
+            Tipo Concesionaria / Servicio
+          </label>
+
+          <div class="row g-2">
+
+            <div class="col-md-3">
+              <label class="border rounded-3 p-3 h-100 d-flex gap-2 align-items-start" style="cursor:pointer;">
+                <input type="radio" name="tipoConcesionaria" class="form-check-input mt-1" checked>
+                <div>
+                  <div class="fw-semibold">Todos</div>
+                  <div class="text-muted small">Sin restricción</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="col-md-3">
+              <label class="border rounded-3 p-3 h-100 d-flex gap-2 align-items-start" style="cursor:pointer;">
+                <input type="radio" name="tipoConcesionaria" class="form-check-input mt-1">
+                <div>
+                  <div class="fw-semibold">Nuevo</div>
+                  <div class="text-muted small">Vehículos nuevos</div>
+                </div>
+              </label>
+            </div>
+
+            <div class="col-md-3">
+              <label class="border rounded-3 p-3 h-100 d-flex gap-2 align-items-start" style="cursor:pointer;">
+                <input type="radio" name="tipoConcesionaria" class="form-check-input mt-1">
+                <div>
+                  <div class="fw-semibold">Seminuevo</div>
+                  <div class="text-muted small">Vehículos usados</div>
+                </div>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <!-- Filtros normales -->
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Estado Comercial</label>
+          <select class="form-select">
+            <option>Todos</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Marca</label>
+          <select class="form-select">
+            <option>Todas</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Provincia / Estado</label>
+          <select class="form-select">
+            <option>Todas</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Grupo</label>
+          <select class="form-select">
+            <option>Todos</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Aplicación</label>
+          <select class="form-select">
+            <option>Todas</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Ejecutivo de soporte</label>
+          <input type="text" class="form-control" placeholder="Nombre del ejecutivo">
+        </div>
+
+      </div>
+
+      <hr class="my-4">
+
+      <!-- Productos -->
+      <div class="fw-semibold mb-2">Productos</div>
+
+      <div class="row g-2">
+
+        <div class="col-md-6">
+          <div class="d-flex flex-column gap-2">
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-car text-primary me-2"></i>Usados</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-car-side text-success me-2"></i>Nuevos</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-image text-secondary me-2"></i>Logo</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-store text-info me-2"></i>Mi-Tienda</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-whatsapp text-success me-2"></i>WhatsApp</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="d-flex flex-column gap-2">
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-certificate text-warning me-2"></i>Certificaciones</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-file-invoice-dollar text-primary me-2"></i>Cotizaciones</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-road text-info me-2"></i>Test Drive</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+            <label class="form-check form-switch d-flex justify-content-between border rounded-3 p-2">
+              <span><i class="fa fa-tools text-secondary me-2"></i>Post-venta</span>
+              <input class="form-check-input m-0" type="checkbox">
+            </label>
+
+          </div>
+        </div>
+
+      </div>
+
+      <div class="d-flex justify-content-end gap-2 mt-4">
+        <button type="button" class="btn btn-outline-secondary">
+          Limpiar
+        </button>
+        <button type="button" class="btn btn-primary">
+          Aplicar filtros
+        </button>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- ================= FIN BUSQUEDA DE AGENCIAS ================= -->
+
+
+
+<!-- ================= BUSQUEDA DE AGENCIAS ================= -->
+<section class="wiki-section" id="agencias">
 
         <!-- HEADER -->
         <div class="mb-3">
@@ -1437,20 +1660,19 @@
 
             </div>
 
-            <!-- FILA 2 -->
             <div class="d-flex flex-wrap gap-2 mb-3">
             <div class="meta-chip">
                 <i class="bi bi-briefcase-fill me-2"></i>
                 <span class="meta-label">Comercial</span>
                 <span class="meta-sep">:</span>
-                <span class="meta-value">Kasa Seminuevos</span>
+                <span class="meta-value">monserra@autocosmos</span>
             </div>
 
             <div class="meta-chip">
                 <i class="bi bi-headset me-2"></i>
                 <span class="meta-label">Soporte</span>
                 <span class="meta-sep">:</span>
-                <span class="meta-value">MX - Intermotor</span>
+                <span class="meta-value">nallelig@autocosmos.com</span>
             </div>
             </div>
 
@@ -1529,8 +1751,23 @@
                     <tr>
                     <td style="width:86px;">
                         <div class="d-flex gap-2">
-                        <button class="btn btn-sm u-btn-primary" style="width:34px;height:34px;"><i class="fa-solid fa-user"></i></button>
-                        <button class="btn btn-sm u-btn-primary" style="width:34px;height:34px;"><i class="fa-solid fa-car"></i></button>
+                        <!-- Usuario -->
+                            <button
+                                type="button"
+                                class="btn btn-sm d-flex align-items-center justify-content-center"
+                                title="Usuario"
+                                style="width:36px;height:36px;background:#16a34a;color:#fff;border-radius:6px;">
+                                <i class="bi bi-person-fill"></i>
+                            </button>
+
+                        <!-- Autos -->
+                        <button
+                            type="button"
+                            class="btn btn-sm d-flex align-items-center justify-content-center"
+                            title="Publicaciones"
+                            style="width:36px;height:36px;background:#16a34a;color:#fff;border-radius:6px;">
+                            <i class="bi bi-car-front-fill"></i>
+                        </button>
                         </div>
                     </td>
                     <td>
@@ -1542,8 +1779,23 @@
                     <tr>
                     <td>
                         <div class="d-flex gap-2">
-                        <button class="btn btn-sm u-btn-primary" style="width:34px;height:34px;"><i class="fa-solid fa-user"></i></button>
-                        <button class="btn btn-sm u-btn-primary" style="width:34px;height:34px;"><i class="fa-solid fa-car"></i></button>
+                       <!-- Usuario -->
+                            <button
+                                type="button"
+                                class="btn btn-sm d-flex align-items-center justify-content-center"
+                                title="Usuario"
+                                style="width:36px;height:36px;background:#16a34a;color:#fff;border-radius:6px;">
+                                <i class="bi bi-person-fill"></i>
+                            </button>
+
+                        <!-- Autos -->
+                        <button
+                            type="button"
+                            class="btn btn-sm d-flex align-items-center justify-content-center"
+                            title="Publicaciones"
+                            style="width:36px;height:36px;background:#16a34a;color:#fff;border-radius:6px;">
+                            <i class="bi bi-car-front-fill"></i>
+                        </button>
                         </div>
                     </td>
                     <td>
@@ -1582,337 +1834,394 @@
 
   <div id="sucursalesInfo" class="text-muted small mb-2">—</div>
 
-  <div class="table-responsive">
-    <table id="sucursalesTable"
-           class="table table-hover mb-0 align-middle"
-           style="border-collapse: separate; border-spacing: 0 12px;">
+<div class="table-responsive">
+  <table id="sucursalesTable"
+         class="table table-hover mb-0 align-middle"
+         style="border-collapse: separate; border-spacing: 0 12px;">
 
-      <thead class="table-light">
-        <tr>
-          <th style="width: 260px;">Sucursal</th>
-          <th>Dirección</th>
-          <th style="width: 260px;">Contacto</th>
-          <th class="text-end" style="width: 120px;">Acciones</th>
-        </tr>
-      </thead>
+    <thead class="table-light">
+      <tr>
+        <th style="width:260px;">Sucursal</th>
+        <th>Dirección</th>
+        <th style="width:220px;">Contacto</th>
+        <th style="width:120px;">Acciones</th>
+      </tr>
+    </thead>
 
-      <tbody>
+<tbody>
+  <!-- 1 -->
+  <tr class="bg-white shadow-sm">
+    <td>
+      <div class="fw-semibold">Central Seminuevos</div>
+      <div class="text-muted small">Comercial</div>
+    </td>
 
-        <!-- Central Seminuevos -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Central Seminuevos</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Tlalnepantla de Baz,
-            Av. Mario Colín S/N Esquina Temazcal,
-            La Loma, 54060
-          </td>
-          <td class="border-0 text-muted small">
-            <div>
-              <span class="fw-semibold text-dark">Postventa:</span>
-              dponzanelli@zapata.com.mx
-            </div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i>
-              <a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i>
-              <a href="https://wa.me/5215514597010" target="_blank" rel="noopener">
-                +52 1 55 1459 7010
-              </a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary" title="Editar">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
+    <td class="text-muted">
+      Estado de México, Tlalnepantla de Baz, Av. Mario Colín S/N Esquina Temazcal, La Loma, 54060
+    </td>
 
-        <!-- Ford Zapata Aeropuerto -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Aeropuerto</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Texcoco,
-            Vía Rápida Lechería-Texcoco Los Reyes Km. 23,
-            Texcoco de Mora Centro, 56100
-          </td>
-          <td class="border-0 text-muted small">
-            <div>
-              <span class="fw-semibold text-dark">Postventa:</span>
-              dponzanelli@zapata.com.mx
-            </div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i>
-              <a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i>
-              <a href="https://wa.me/5215514597010" target="_blank" rel="noopener">
-                +52 1 55 1459 7010
-              </a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
+    <td>
+      <div class="d-flex flex-column gap-1">
+        <div class="small">
+          <span class="fw-semibold">Postventa:</span>
+          <span class="text-muted">dponzanelli@zapata.com.mx</span>
+        </div>
 
-        <!-- Ford Zapata Atizapán -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Atizapán</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Estado de México, Atizapán de Zaragoza,
-            Av. Lago de Guadalupe Lt.2 Mz.32-A,
-            Villas de la Hacienda, 52929
-          </td>
-          <td class="border-0 text-muted small">
-            <div>
-              <span class="fw-semibold text-dark">Postventa:</span>
-              dponzanelli@zapata.com.mx
-            </div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i>
-              <a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i>
-              <a href="https://wa.me/5215514597010" target="_blank" rel="noopener">
-                +52 1 55 1459 7010
-              </a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
 
-        <!-- Ford Zapata Pachuca -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Ford Zapata Pachuca</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Hidalgo, Pachuca de Soto,
-            Blvd. Felipe Ángeles 2307,
-            Venta Prieta, 42083
-          </td>
-          <td class="border-0 text-muted small">
-            <div>
-              <span class="fw-semibold text-dark">Postventa:</span>
-              dponzanelli@zapata.com.mx
-            </div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i>
-              <a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i>
-              <a href="https://wa.me/5215514597010" target="_blank" rel="noopener">
-                +52 1 55 1459 7010
-              </a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+      </div>
+    </td>
 
-        <!-- Go-On Querétaro -->
-        <tr class="bg-white shadow-sm" style="border-radius:10px; overflow:hidden;">
-          <td class="border-0">
-            <div class="fw-semibold">Go-On Querétaro</div>
-            <div class="text-muted small">Comercial</div>
-          </td>
-          <td class="border-0 text-muted small">
-            Querétaro, Querétaro,
-            Priv. de los Industriales 115,
-            Benito Juárez, 76120
-          </td>
-          <td class="border-0 text-muted small">
-            <div>
-              <span class="fw-semibold text-dark">Postventa:</span>
-              dponzanelli@zapata.com.mx
-            </div>
-            <div class="mt-1">
-              <i class="fa-solid fa-phone me-2 text-primary"></i>
-              <a href="tel:+5215514597010">+52 1 55 1459 7010</a>
-            </div>
-            <div class="mt-1">
-              <i class="fa-brands fa-whatsapp me-2 text-success"></i>
-              <a href="https://wa.me/5215514597010" target="_blank" rel="noopener">
-                +52 1 55 1459 7010
-              </a>
-            </div>
-          </td>
-          <td class="border-0 text-end">
-            <div class="btn-group">
-              <button class="btn btn-sm btn-outline-primary">
-                <i class="fa-solid fa-pen"></i>
-              </button>
-              <button class="btn btn-sm btn-outline-danger">
-                <i class="fa-solid fa-trash"></i>
-              </button>
-            </div>
-          </td>
-        </tr>
+    <td>
+      <div class="d-flex align-items-center gap-3 justify-content-end">
+        <button type="button"
+                class="btn btn-sm d-inline-flex align-items-center justify-content-center"
+                title="Editar"
+                style="width:40px;height:36px;border:2px solid #198754;color:#198754;border-radius:6px;background:#fff;">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
 
-      </tbody>
-    </table>
-  </div>
+        <button type="button" class="btn btn-sm p-0" title="Eliminar" style="color:#dc3545;background:transparent;">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 2 -->
+  <tr class="bg-white shadow-sm">
+    <td>
+      <div class="fw-semibold">Ford Zapata Aeropuerto</div>
+      <div class="text-muted small">Comercial</div>
+    </td>
+
+    <td class="text-muted">
+      Estado de México, Texcoco, Vía Rápida Lechería-Texcoco Los Reyes Km. 23, Texcoco de Mora Centro, 56100
+    </td>
+
+    <td>
+      <div class="d-flex flex-column gap-1">
+        <div class="small">
+          <span class="fw-semibold">Postventa:</span>
+          <span class="text-muted">dponzanelli@zapata.com.mx</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="d-flex align-items-center gap-3 justify-content-end">
+        <button type="button"
+                class="btn btn-sm d-inline-flex align-items-center justify-content-center"
+                title="Editar"
+                style="width:40px;height:36px;border:2px solid #198754;color:#198754;border-radius:6px;background:#fff;">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <button type="button" class="btn btn-sm p-0" title="Eliminar" style="color:#dc3545;background:transparent;">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 3 -->
+  <tr class="bg-white shadow-sm">
+    <td>
+      <div class="fw-semibold">Ford Zapata Atizapán</div>
+      <div class="text-muted small">Comercial</div>
+    </td>
+
+    <td class="text-muted">
+      Estado de México, Atizapán de Zaragoza, Av. Lago de Guadalupe Lt.2 Mz.32-A, Villas de la Hacienda, 52929
+    </td>
+
+    <td>
+      <div class="d-flex flex-column gap-1">
+        <div class="small">
+          <span class="fw-semibold">Postventa:</span>
+          <span class="text-muted">dponzanelli@zapata.com.mx</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="d-flex align-items-center gap-3 justify-content-end">
+        <button type="button"
+                class="btn btn-sm d-inline-flex align-items-center justify-content-center"
+                title="Editar"
+                style="width:40px;height:36px;border:2px solid #198754;color:#198754;border-radius:6px;background:#fff;">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <button type="button" class="btn btn-sm p-0" title="Eliminar" style="color:#dc3545;background:transparent;">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 4 -->
+  <tr class="bg-white shadow-sm">
+    <td>
+      <div class="fw-semibold">Ford Zapata Pachuca</div>
+      <div class="text-muted small">Comercial</div>
+    </td>
+
+    <td class="text-muted">
+      Hidalgo, Pachuca de Soto, Blvd. Felipe Ángeles 2307, Venta Prieta, 42083
+    </td>
+
+    <td>
+      <div class="d-flex flex-column gap-1">
+        <div class="small">
+          <span class="fw-semibold">Postventa:</span>
+          <span class="text-muted">dponzanelli@zapata.com.mx</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="d-flex align-items-center gap-3 justify-content-end">
+        <button type="button"
+                class="btn btn-sm d-inline-flex align-items-center justify-content-center"
+                title="Editar"
+                style="width:40px;height:36px;border:2px solid #198754;color:#198754;border-radius:6px;background:#fff;">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <button type="button" class="btn btn-sm p-0" title="Eliminar" style="color:#dc3545;background:transparent;">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </td>
+  </tr>
+
+  <!-- 5 -->
+  <tr class="bg-white shadow-sm">
+    <td>
+      <div class="fw-semibold">Go-On Querétaro</div>
+      <div class="text-muted small">Comercial</div>
+    </td>
+
+    <td class="text-muted">
+      Querétaro, Querétaro, Priv. de los Industriales 115, Benito Juárez, 76120
+    </td>
+
+    <td>
+      <div class="d-flex flex-column gap-1">
+        <div class="small">
+          <span class="fw-semibold">Postventa:</span>
+          <span class="text-muted">dponzanelli@zapata.com.mx</span>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-telephone-fill" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <i class="bi bi-whatsapp" style="color:#198754;"></i>
+          <a href="#" class="text-success text-decoration-underline small">+52 1 55 1459 7010</a>
+        </div>
+      </div>
+    </td>
+
+    <td>
+      <div class="d-flex align-items-center gap-3 justify-content-end">
+        <button type="button"
+                class="btn btn-sm d-inline-flex align-items-center justify-content-center"
+                title="Editar"
+                style="width:40px;height:36px;border:2px solid #198754;color:#198754;border-radius:6px;background:#fff;">
+          <i class="bi bi-pencil-fill"></i>
+        </button>
+
+        <button type="button" class="btn btn-sm p-0" title="Eliminar" style="color:#dc3545;background:transparent;">
+          <i class="bi bi-trash-fill"></i>
+        </button>
+      </div>
+    </td>
+  </tr>
+</tbody>
+
+
+  </table>
+</div>
 
 </div>
 
 
         </div>
-
         </section>
-         <section class="wiki-section" id="agencias-status-servicio">
-            <h2>Estatus servicio Agencias</h2>
-            <p class="g-color-gray-dark-v4 mb-4">
-                Pantalla de análisis de actividad por periodo (año/mes) y filtros avanzados.
-            </p>
+<section class="wiki-section" id="agencias-status-servicio">
+  <h2>Estatus servicio Agencias</h2>
+  <p class="g-color-gray-dark-v4 mb-4">
+    Pantalla de análisis de actividad por periodo (año/mes) y filtros avanzados.
+  </p>
 
-            <form class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-rounded-5 mb-4">
-                <div class="row g-mb-15">
-                    <div class="col-md-3">
-                        <label class="form-label fw-semibold">Desde</label>
-                        <input type="date" class="form-control" value="2025-11-01">
-                    </div>
-                    <div class="col-md-3">
-                        <label class="form-label fw-semibold">Hasta</label>
-                        <input type="date" class="form-control" value="2025-11-30">
-                    </div>
-                </div>
+  <form class="g-brd-around g-brd-gray-light-v4 g-pa-20 g-rounded-5 mb-4">
+    <div class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Desde</label>
+        <input type="date" class="form-control" value="2025-11-01">
+      </div>
 
-                <a href="#" class="d-inline-block g-mb-15">Filtro avanzado</a>
+      <div class="col-md-3">
+        <label class="form-label fw-semibold">Hasta</label>
+        <input type="date" class="form-control" value="2025-11-30">
+      </div>
+      <div class="col-md-6">
+        <div class="d-flex justify-content-md-end gap-2 flex-wrap">
+          <button
+            type="button"
+            id="btnToggleFiltrosStatus"
+                        class="btn btn-outline-secondary px-4 d-flex align-items-center gap-2"
+            data-toggle="filters"
+            data-target="#filtersPanelStatus"
+            aria-expanded="false">
+            <i class="bi bi-sliders me-1"></i>
+            Filtros
+          </button>
+        </div>
+      </div>
+    </div>
 
-                <div class="row g-mb-15">
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Ejecutivo</label>
-                        <input type="text" class="form-control" placeholder="">
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Estado Comercial</label>
-                        <select class="form-select">
-                            <option selected>Pago</option>
-                            <option>Prueba</option>
-                            <option>Vencido</option>
-                        </select>
-                    </div>
-                </div>
+    <!-- PANEL FILTROS AVANZADOS (oculto por defecto) -->
+    <div id="filtersPanelStatus" class="d-none mt-4">
 
-                <div class="row g-mb-15">
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Grupo</label>
-                        <select class="form-select">
-                            <option selected>Todos</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Aplicación</label>
-                        <select class="form-select">
-                            <option selected>Todas</option>
-                        </select>
-                    </div>
-                </div>
+      <div class="row g-3">
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Ejecutivo</label>
+          <input type="text" class="form-control" placeholder="">
+        </div>
 
-                <div class="row g-mb-15">
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Provincia/Estado</label>
-                        <select class="form-select">
-                            <option selected>Todas</option>
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label class="form-label fw-semibold">Asociación</label>
-                        <select class="form-select">
-                            <option selected>Todas</option>
-                        </select>
-                    </div>
-                </div>
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Estado Comercial</label>
+          <select class="form-select">
+            <option selected>Pago</option>
+            <option>Prueba</option>
+            <option>Vencido</option>
+          </select>
+        </div>
+      </div>
 
-                <div class="d-flex align-items-center justify-content-between mt-4">
-                    <button type="button" class="btn btn-secondary btn-sm">Download</button>
-                    <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20">
-                        Analizar
-                    </button>
-                </div>
-            </form>
+      <div class="row g-3 mt-0">
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Grupo</label>
+          <select class="form-select">
+            <option selected>Todos</option>
+          </select>
+        </div>
 
-            <div class="table-responsive">
-                <table class="table table-striped table-hover mb-0">
-                    <thead>
-                        <tr>
-                            <th>Admin</th>
-                            <th>Agencia</th>
-                            <th>Info. Comercial</th>
-                            <th>Publicaciones</th>
-                            <th>Consultas</th>
-                            <th class="text-end">Acciones</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>
-                                <div class="fw-semibold">María José Ponce</div>
-                                <div class="text-muted small">Oaxaca de Juárez</div>
-                            </td>
-                            <td>
-                                <div class="fw-semibold">Ford Dinastía Oaxaca</div>
-                                <div class="text-muted small">#264171</div>
-                            </td>
-                            <td>
-                                <div class="text-muted small">monserrat@autocosmos.com</div>
-                            </td>
-                            <td>1</td>
-                            <td>0</td>
-                            <td class="text-end">
-                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
-                                <button class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right"></i></button>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-        <section class="wiki-section" id="agencias-grupos-concesionarias">
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Aplicación</label>
+          <select class="form-select">
+            <option selected>Todas</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-3 mt-0">
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Provincia/Estado</label>
+          <select class="form-select">
+            <option selected>Todas</option>
+          </select>
+        </div>
+
+        <div class="col-md-6">
+          <label class="form-label fw-semibold">Asociación</label>
+          <select class="form-select">
+            <option selected>Todas</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- ACCIÓN (Analizar) - debajo de Asociación -->
+      <div class="d-flex justify-content-end mt-3">
+        <button type="button" class="btn u-btn-primary g-font-size-12 text-uppercase g-py-10 g-px-20">
+          Analizar
+        </button>
+      </div>
+
+    </div>
+  </form>
+
+  <div class="table-responsive">
+    <table class="table table-striped table-hover mb-0">
+      <thead>
+        <tr>
+          <th>Admin</th>
+          <th>Agencia</th>
+          <th>Info. Comercial</th>
+          <th>Publicaciones</th>
+          <th>Consultas</th>
+          <th class="text-end">Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            <div class="fw-semibold">María José Ponce</div>
+            <div class="text-muted small">Oaxaca de Juárez</div>
+          </td>
+          <td>
+            <div class="fw-semibold">Ford Dinastía Oaxaca</div>
+            <div class="text-muted small">#264171</div>
+          </td>
+          <td>
+            <div class="text-muted small">monserrat@autocosmos.com</div>
+          </td>
+          <td>1</td>
+          <td>0</td>
+          <td class="text-end">
+            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-gear"></i></button>
+            <button class="btn btn-sm btn-outline-primary"><i class="bi bi-box-arrow-up-right"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+    <section class="wiki-section" id="agencias-grupos-concesionarias">
 
         <!-- Header -->
         <div class="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-3">
@@ -1927,145 +2236,228 @@
 
         </div>
 
-        <!-- Tabla -->
-        <div class="table-responsive">
-            <table class="table table-striped table-hover align-middle mb-0">
+   <div class="table-responsive">
+<div class="table-responsive">
+  <table class="table table-striped table-hover align-middle mb-0">
 
-            <thead>
-                <tr>
-                <th style="width:96px;">Logo</th>
-                <th>Grupo</th>
-                <th>Razón social</th>
-                <th>Sitio</th>
-                <th class="text-end" style="width:160px;">Acciones</th>
-                </tr>
-            </thead>
+    <thead>
+      <tr>
+        <th style="width:96px;">Logo</th>
+        <th>Grupo</th>
+        <th>Redes sociales</th>
+        <th>Sitio</th>
+        <th class="text-end" style="width:160px;">Acciones</th>
+      </tr>
+    </thead>
 
-            <tbody>
+    <tbody>
 
-                <tr>
-                <td class="text-center">
-                    <div class="logo-wrapper">
-                    <img src="img/grupos/ARCA.jpg" alt="ARCA">
-                    </div>
-                </td>
-                <td class="fw-semibold">ARCA</td>
-                <td class="text-muted">Arca Automotriz S.A. de C.V.</td>
-                <td>
-                    <a href="https://seminuevosarca.com.mx/"
-                    target="_blank"
-                    class="text-decoration-none">
-                    https://seminuevosarca.com.mx/
-                    </a>
-                </td>
-                <td class="text-end">
-                    <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-primary" title="Editar">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <a class="btn btn-sm btn-outline-secondary"
-                        href="https://seminuevosarca.com.mx/"
-                        target="_blank"
-                        title="Abrir">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </a>
-                    <button class="btn btn-sm btn-outline-danger" title="Eliminar">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </div>
-                </td>
-                </tr>
-                <tr>
-                <td class="text-center">
-                    <div class="logo-wrapper">
-                    <img src="img/grupos/AutoFinMexico.jpg" alt="Autofin">
-                    </div>
-                </td>
-                <td class="fw-semibold">Autofin</td>
-                <td class="text-muted">Autofinanciamiento México S.A. de C.V.</td>
-                <td class="text-muted">—</td>
-                <td class="text-end">
-                    <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-secondary" disabled>
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </button>
-                    <button class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </div>
-                </td>
-                </tr>
-                <tr>
-                <td class="text-center">
-                    <div class="logo-wrapper">
-                    <img src="img/grupos/Cerver.jpg" alt="Cever">
-                    </div>
-                </td>
-                <td class="fw-semibold">Cever</td>
-                <td class="text-muted">Cever Automotriz S.A. de C.V.</td>
-                <td>
-                    <a href="https://www.cever.com.mx/"
-                    target="_blank"
-                    class="text-decoration-none">
-                    https://www.cever.com.mx/
-                    </a>
-                </td>
-                <td class="text-end">
-                    <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <a class="btn btn-sm btn-outline-secondary"
-                        href="https://www.cever.com.mx/"
-                        target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </a>
-                    <button class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </div>
-                </td>
-                </tr>
-                <tr>
-                <td class="text-center">
-                    <div class="logo-wrapper">
-                    <img src="img/grupos/KASA.jpg" alt="Kasa">
-                    </div>
-                </td>
-                <td class="fw-semibold">Kasa</td>
-                <td class="text-muted">Kasa Automotriz S.A. de C.V.</td>
-                <td>
-                    <a href="https://seminuevoskasa.com/"
-                    target="_blank"
-                    class="text-decoration-none">
-                    https://seminuevoskasa.com/
-                    </a>
-                </td>
-                <td class="text-end">
-                    <div class="btn-group">
-                    <button class="btn btn-sm btn-outline-primary">
-                        <i class="bi bi-pencil"></i>
-                    </button>
-                    <a class="btn btn-sm btn-outline-secondary"
-                        href="https://seminuevoskasa.com/"
-                        target="_blank">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                    </a>
-                    <button class="btn btn-sm btn-outline-danger">
-                        <i class="bi bi-trash"></i>
-                    </button>
-                    </div>
-                </td>
-                </tr>
+      <tr>
+        <td class="text-center">
+          <div class="logo-wrapper">
+            <img src="img/grupos/ARCA.jpg" alt="ARCA">
+          </div>
+        </td>
+        <td class="fw-semibold">ARCA</td>
 
-            </tbody>
-            </table>
-        </div>
+        <!-- Redes sociales (ANTES: Razón social) -->
+        <td>
+          <ul class="list-unstyled mb-0 small text-muted">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-instagram"></i><span>@arca.autos</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-tiktok"></i><span>@arca.autos</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-twitter"></i><span>@arca_autos</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-facebook"></i><span>ArcaAutomotriz</span>
+            </li>
+          </ul>
+        </td>
 
-        </section>
+        <td>
+          <a href="https://seminuevosarca.com.mx/"
+             target="_blank"
+             class="text-decoration-none">
+            https://seminuevosarca.com.mx/
+          </a>
+        </td>
+
+        <td class="text-end">
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-primary" title="Editar">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://seminuevosarca.com.mx/"
+               target="_blank"
+               title="Abrir">
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <button class="btn btn-sm btn-outline-danger" title="Eliminar">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="text-center">
+          <div class="logo-wrapper">
+            <img src="img/grupos/AutoFinMexico.jpg" alt="Autofin">
+          </div>
+        </td>
+        <td class="fw-semibold">Autofin</td>
+
+        <!-- Redes sociales (ANTES: Razón social) -->
+        <td>
+          <ul class="list-unstyled mb-0 small text-muted">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-instagram"></i><span>@autofin.mex</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-tiktok"></i><span>@autofin.mex</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-twitter"></i><span>@autofin_mx</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-facebook"></i><span>AutofinMexico</span>
+            </li>
+          </ul>
+        </td>
+
+        <td class="text-muted">—</td>
+
+        <td class="text-end">
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-secondary" disabled>
+              <i class="bi bi-box-arrow-up-right"></i>
+            </button>
+            <button class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="text-center">
+          <div class="logo-wrapper">
+            <img src="img/grupos/Cerver.jpg" alt="Cever">
+          </div>
+        </td>
+        <td class="fw-semibold">Cever</td>
+
+        <!-- Redes sociales (ANTES: Razón social) -->
+        <td>
+          <ul class="list-unstyled mb-0 small text-muted">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-instagram"></i><span>@cever.mx</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-tiktok"></i><span>@cever.mx</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-twitter"></i><span>@cever_mx</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-facebook"></i><span>CeverAutomotriz</span>
+            </li>
+          </ul>
+        </td>
+
+        <td>
+          <a href="https://www.cever.com.mx/"
+             target="_blank"
+             class="text-decoration-none">
+            https://www.cever.com.mx/
+          </a>
+        </td>
+
+        <td class="text-end">
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://www.cever.com.mx/"
+               target="_blank">
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <button class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+
+      <tr>
+        <td class="text-center">
+          <div class="logo-wrapper">
+            <img src="img/grupos/KASA.jpg" alt="Kasa">
+          </div>
+        </td>
+        <td class="fw-semibold">Kasa</td>
+
+        <!-- Redes sociales (ANTES: Razón social) -->
+        <td>
+          <ul class="list-unstyled mb-0 small text-muted">
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-instagram"></i><span>@kasa.autos</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-tiktok"></i><span>@kasa.autos</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-twitter"></i><span>@kasa_mx</span>
+            </li>
+            <li class="d-flex align-items-center gap-2">
+              <i class="bi bi-facebook"></i><span>KasaAutomotriz</span>
+            </li>
+          </ul>
+        </td>
+
+        <td>
+          <a href="https://seminuevoskasa.com/"
+             target="_blank"
+             class="text-decoration-none">
+            https://seminuevoskasa.com/
+          </a>
+        </td>
+
+        <td class="text-end">
+          <div class="btn-group">
+            <button class="btn btn-sm btn-outline-primary">
+              <i class="bi bi-pencil"></i>
+            </button>
+            <a class="btn btn-sm btn-outline-secondary"
+               href="https://seminuevoskasa.com/"
+               target="_blank">
+              <i class="bi bi-box-arrow-up-right"></i>
+            </a>
+            <button class="btn btn-sm btn-outline-danger">
+              <i class="bi bi-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+</div>
+
+
+</div>
+
+  </section>
+
         <!-- ======================================== -->
         <!-- SECCIÓN DE CONTROL USADOS -->
         <!-- ======================================== -->
@@ -3019,169 +3411,170 @@
     </div>
 
 <!-- Modal: Agregar Grupo Concesionario -->
-<div class="modal fade" id="grupoConcesionarioModal" tabindex="-1" aria-labelledby="grupoConcesionarioModalLabel" aria-hidden="true">
+<div class="modal fade" id="grupoConcesionarioModal" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
     <div class="modal-content">
 
-      <!-- HEADER AZUL -->
-      <div class="modal-header bg-primary text-white">
-        <h5 class="modal-title d-flex align-items-center gap-2" id="grupoConcesionarioModalLabel">
-          <i class="bi bi-person-plus"></i>
-          Agregar Grupo Concesionario
-        </h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      <!-- Header -->
+      <div class="modal-header">
+        <h5 class="modal-title">Agregar Grupo Concesionario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
-      <!-- SUBTÍTULO -->
-      <div class="px-4 pt-3 text-muted small">
-        Complete el formulario para dar de alta un nuevo grupo concesionario
-      </div>
+      <!-- Body -->
+      <div class="modal-body">
 
-      <div class="modal-body px-4 pb-0">
+        <!-- Nombre Concesionario -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">
+            Nombre Concesionario <span class="text-danger">*</span>
+          </label>
+          <div class="input-group">
+            <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
+              <i class="bi bi-building"></i>
+            </span>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Ej. Arca Automotriz"
+                   required>
+          </div>
+        </div>
 
-        <!-- SECCIÓN 1 -->
-        <div class="mt-3">
+        <!-- Sigla -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">
+            Sigla <span class="text-danger">*</span>
+          </label>
+          <div class="input-group">
+            <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
+              <i class="bi bi-card-text"></i>
+            </span>
+            <input type="text"
+                   class="form-control"
+                   placeholder="Ej. ARCA"
+                   required>
+          </div>
+        </div>
+
+        <!-- Descripción -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Descripción</label>
+          <textarea class="form-control" rows="2"
+                    placeholder="Descripción del grupo concesionario"></textarea>
+        </div>
+
+        <!-- Plantilla y Tema -->
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Plantilla</label>
+            <select class="form-select">
+              <option selected>Default</option>
+            </select>
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Tema</label>
+            <select class="form-select">
+              <option selected>Default</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Sitio -->
+        <div class="mb-3">
+          <label class="form-label fw-semibold">Sitio</label>
+          <div class="input-group">
+            <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
+              <i class="bi bi-globe"></i>
+            </span>
+            <input type="url"
+                   class="form-control"
+                   placeholder="https://www.ejemplo.com">
+          </div>
+        </div>
+
+        <!-- ================= Redes Sociales ================= -->
+        <div class="mt-4">
           <div class="d-flex align-items-center gap-2 text-primary fw-semibold">
-            <i class="bi bi-info-circle"></i>
-            Información del Grupo
+            <i class="bi bi-share"></i>
+            Redes sociales
           </div>
           <hr class="mt-2">
         </div>
 
-        <form id="grupoConcesionarioForm">
-
-          <!-- Nombre Concesionario (full) -->
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Nombre Concesionario <span class="text-danger">*</span></label>
+        <div class="row g-3 mb-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Instagram</label>
             <div class="input-group">
               <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                <i class="bi bi-building"></i>
+                <i class="bi bi-instagram"></i>
               </span>
-              <input type="text" class="form-control" placeholder="Ej. ARCA" required>
+              <input type="text" class="form-control" placeholder="@usuario o URL">
             </div>
           </div>
 
-          <!-- Razón social (full) -->
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Razón Social <span class="text-danger">*</span></label>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">TikTok</label>
             <div class="input-group">
               <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                <i class="bi bi-card-text"></i>
+                <i class="bi bi-tiktok"></i>
               </span>
-              <input type="text" class="form-control" placeholder="Ej. Arca Automotriz S.A. de C.V." required>
+              <input type="text" class="form-control" placeholder="@usuario o URL">
             </div>
           </div>
 
-          <!-- Descripción (full) -->
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Descripción</label>
-            <div class="input-group">
-              <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center; align-items:flex-start;">
-                <i class="bi bi-chat-left-text"></i>
-              </span>
-              <textarea class="form-control" rows="4" placeholder="Filosofía de la empresa y valores..."></textarea>
-            </div>
-          </div>
-
-          <!-- SECCIÓN 2 -->
-          <div class="mt-4">
-            <div class="d-flex align-items-center gap-2 text-primary fw-semibold">
-              <i class="bi bi-sliders"></i>
-              Configuración
-            </div>
-            <hr class="mt-2">
-          </div>
-
-          <!-- Plantilla + Tema (mismo renglón) -->
-          <div class="row g-3 mb-3">
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Plantilla</label>
-              <div class="input-group">
-                <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                  <i class="bi bi-layout-text-window"></i>
-                </span>
-                <select class="form-select">
-                  <option selected>Senna</option>
-                  <option>Default</option>
-                </select>
-              </div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Tema</label>
-              <div class="input-group">
-                <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                  <i class="bi bi-palette"></i>
-                </span>
-                <select class="form-select">
-                  <option selected>Azul</option>
-                  <option>Verde</option>
-                  <option>Gris</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- Sitio (full) -->
-          <div class="mb-3">
-            <label class="form-label fw-semibold">Sitio</label>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">X</label>
             <div class="input-group">
               <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                <i class="bi bi-link-45deg"></i>
+                <i class="bi bi-twitter-x"></i>
               </span>
-              <input type="url" class="form-control" placeholder="https://tusitio.com/">
+              <input type="text" class="form-control" placeholder="@usuario o URL">
             </div>
           </div>
 
-          <!-- SECCIÓN 3 -->
-          <div class="mt-4">
-            <div class="d-flex align-items-center gap-2 text-primary fw-semibold">
-              <i class="bi bi-image"></i>
-              Multimedia
-            </div>
-            <hr class="mt-2">
-          </div>
-
-          <!-- Logo + Imagen páginas (mismo renglón) -->
-          <div class="row g-3 mb-4">
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Logo</label>
-              <div class="input-group">
-                <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                  <i class="bi bi-file-image"></i>
-                </span>
-                <input type="file" class="form-control" accept="image/*">
-              </div>
-              <div class="form-text text-muted">PNG/JPG recomendado</div>
-            </div>
-
-            <div class="col-12 col-md-6">
-              <label class="form-label fw-semibold">Imagen páginas</label>
-              <div class="input-group">
-                <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
-                  <i class="bi bi-images"></i>
-                </span>
-                <input type="file" class="form-control" accept="image/*">
-              </div>
-              <div class="form-text text-muted">Imagen tipo banner</div>
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Facebook</label>
+            <div class="input-group">
+              <span class="input-group-text bg-success text-white" style="min-width:44px; justify-content:center;">
+                <i class="bi bi-facebook"></i>
+              </span>
+              <input type="text" class="form-control" placeholder="URL de la página">
             </div>
           </div>
+        </div>
+        <!-- ================= Fin Redes Sociales ================= -->
 
-        </form>
+        <!-- Multimedia -->
+        <div class="mt-4">
+          <div class="d-flex align-items-center gap-2 text-primary fw-semibold">
+            <i class="bi bi-image"></i>
+            Multimedia
+          </div>
+          <hr class="mt-2">
+        </div>
+
+        <div class="row g-3">
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Logo</label>
+            <input type="file" class="form-control">
+          </div>
+
+          <div class="col-md-6">
+            <label class="form-label fw-semibold">Imágenes páginas</label>
+            <input type="file" class="form-control" multiple>
+          </div>
+        </div>
+
       </div>
 
-      <!-- FOOTER COMO LA CAPTURA -->
-      <div class="modal-footer d-flex align-items-center justify-content-end gap-2">
+      <!-- Footer -->
+      <div class="modal-footer">
         <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">
-          <i class="bi bi-x-circle me-1"></i> Cancelar
+          Cancelar
         </button>
-
-        <button type="reset" class="btn btn-outline-danger" form="grupoConcesionarioForm">
-          <i class="bi bi-eraser me-1"></i> Limpiar
-        </button>
-
-        <button type="submit" class="btn btn-success" form="grupoConcesionarioForm">
-          <i class="bi bi-check-circle me-1"></i> Guardar
+        <button type="button" class="btn u-btn-primary">
+          Guardar
         </button>
       </div>
 
@@ -3192,8 +3585,25 @@
 
 
 
+
 <script>
 (function () {
+
+ document.addEventListener('click', function (e) {
+      const btn = e.target.closest('[data-toggle="filters"]');
+      if (!btn) return;
+
+      const selector = btn.getAttribute('data-target');
+      if (!selector) return;
+
+      const panel = document.querySelector(selector);
+      if (!panel) return;
+
+      const willOpen = panel.classList.contains('d-none');
+      panel.classList.toggle('d-none');
+      btn.setAttribute('aria-expanded', String(willOpen));
+    });
+
   function initSucursalesMiniTable() {
     const table = document.getElementById('sucursalesTable');
     const search = document.getElementById('sucursalesSearch');
